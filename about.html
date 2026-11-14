@@ -4,137 +4,17 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="About Top Notch Canine Capability — Meet Director Bonifance Mokua, our military-grade certifications, and our journey since 2016."/>
+  <link rel="icon" href="favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
   <title>About Us | Top Notch Canine Capability</title>
   <link rel="canonical" href="https://topnotchk9capability.co.ke/about.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    /* ── About page styles ─────────────────── */
-    .about-full { padding: 96px 0; background: var(--bg); }
-    .about-full-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
-    .bio-img {
-      position: sticky; top: calc(var(--nav-h) + 24px);
-      max-width: 340px;
-      overflow: visible;
-    }
-    .bio-img-frame {
-      aspect-ratio: 4/5; background: var(--bg-card);
-      border: 1px solid var(--white-10); border-radius: var(--radius-md);
-      overflow: hidden; position: relative;
-    }
-    .bio-img-frame .site-photo { object-position: top center; }
-    .bio-img-frame::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--red), transparent);
-    }
-    .bio-img-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 16px; background: linear-gradient(160deg, #141414, #0a0a0a);
-    }
-    .bio-img-placeholder svg { width: 80px; height: 80px; stroke: var(--white-10); }
-    .bio-img-placeholder span { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-40); }
-    .bio-badge-card {
-      position: absolute; bottom: 24px; right: -28px; z-index: 4;
-      background: var(--red);
-      border-radius: var(--radius-md);
-      padding: 20px 24px;
-      border: 3px solid var(--bg);
-    }
-    .bio-badge-card .num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: var(--white); line-height: 1; }
-    .bio-badge-card .lbl { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 4px; }
-    .bio-name-card {
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: var(--radius-md); padding: 20px; margin-top: 16px;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    }
-    .bio-name-card h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); }
-    .bio-name-card p { font-size: 0.8rem; color: var(--red); margin-top: 4px; font-family: var(--font-heading); letter-spacing: 0.08em; text-transform: uppercase; }
-    .bio-name-card .badge-red { font-size: 0.6rem; }
-
-    .bio-content { space-y: 8; }
-    .bio-content h2 { font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--white); margin-bottom: 8px; }
-    .bio-content h2 span { color: var(--red); }
-    .bio-content .role { font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
-    .bio-content .role::before { content: ''; width: 20px; height: 1px; background: var(--red); display: block; }
-    .bio-para { color: var(--white-70); line-height: 1.85; margin-bottom: 20px; font-size: 0.95rem; }
-
-    .exp-timeline { margin: 32px 0; border-left: 2px solid var(--red); padding-left: 28px; }
-    .exp-item { position: relative; margin-bottom: 28px; }
-    .exp-item::before {
-      content: '';
-      position: absolute; left: -34px; top: 4px;
-      width: 10px; height: 10px;
-      border: 2px solid var(--red); border-radius: 50%;
-      background: var(--bg);
-    }
-    .exp-year { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
-    .exp-title { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
-    .exp-org { font-size: 0.82rem; color: var(--white-40); }
-
-    .certs-section { padding: 80px 0; background: var(--bg-alt); }
-    .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .cert-card {
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: var(--radius-md); padding: 28px;
-      transition: border-color var(--transition), transform var(--transition-slow);
-    }
-    .cert-card:hover { border-color: var(--red-border); transform: translateY(-3px); }
-    .cert-icon { width: 44px; height: 44px; background: var(--red-subtle); border: 1px solid var(--red-border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-    .cert-icon svg { width: 20px; height: 20px; stroke: var(--red); }
-    .cert-name { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
-    .cert-full { font-size: 0.8rem; color: var(--white-40); margin-bottom: 8px; }
-    .cert-note { font-size: 0.78rem; color: var(--white-40); line-height: 1.6; }
-
-    .values-section { padding: 80px 0; background: #F2F2F2; }
-    .values-section .section-title { color: #0A0A0A; }
-    .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .value-item { text-align: center; padding: 32px 20px; }
-    .value-num { font-family: var(--font-heading); font-size: 3rem; font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 8px; }
-    .value-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #555; }
-
-    @media (max-width: 1024px) {
-      .about-full-grid { grid-template-columns: 1fr; gap: 40px; }
-      .bio-img { position: static; max-width: 380px; overflow: visible; }
-      .about-full { padding: 64px 0; }
-      .certs-section { padding: 56px 0; }
-      .values-section { padding: 56px 0; }
-    }
-    @media (max-width: 768px) {
-      .certs-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-      .values-grid { grid-template-columns: 1fr 1fr; gap: 0; }
-      .bio-img { max-width: 100%; }
-      .exp-timeline { margin: 24px 0; }
-      .bio-content h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-      .bio-badge-card { bottom: -16px; right: -8px; padding: 14px 18px; }
-      .bio-badge-card .num { font-size: 2rem; }
-    }
-    @media (max-width: 640px) {
-      .about-full { padding: 48px 0; }
-      .certs-grid { grid-template-columns: 1fr; }
-      .bio-img-frame { aspect-ratio: 4/3; }
-      .bio-name-card { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .bio-badge-card { bottom: 12px; right: 12px; position: relative; margin-top: 12px; display: inline-block; }
-    }
-    @media (max-width: 480px) {
-      .values-grid { grid-template-columns: 1fr 1fr; }
-      .value-num { font-size: 2.5rem; }
-      .cert-card { padding: 20px; }
-      .about-full { padding: 40px 0; }
-      .certs-section { padding: 40px 0; }
-      .values-section { padding: 40px 0; }
-    }
-    @media (max-width: 375px) {
-      .cert-name { font-size: 0.9rem; }
-      .exp-timeline { padding-left: 20px; }
-      .exp-item::before { left: -27px; }
-    }
-  </style>
 </head>
-<body>
+<body class="page-about">
 
 <!-- NAVBAR -->
 <nav id="navbar" aria-label="Main navigation">
@@ -249,17 +129,10 @@
 
 <!-- WHO WE ARE -->
 <section class="who-section" aria-label="Who we are">
-  <style>
-    .who-section { padding: 80px 0; background: #F2F2F2; }
-    .who-inner { max-width: 860px; margin: 0 auto; text-align: center; }
-    .who-inner .section-title { color: #0A0A0A; }
-    .who-inner p:not(.section-label) { color: #555; line-height: 1.9; font-size: 1.05rem; margin-bottom: 20px; }
-    .who-inner p:last-child { margin-bottom: 0; }
-  </style>
   <div class="container">
     <div class="who-inner reveal">
       <p class="section-label">Who We Are</p>
-      <h2 class="section-title" style="margin-bottom: 28px;">Kenya's Premier <span>K9 Security Provider</span></h2>
+      <h2 class="section-title u-mb-28">Kenya's Premier <span>K9 Security Provider</span></h2>
       <p>TOPNOTCH K-9 CAPABILITY is a premier provider of highly trained Security Working Dogs — Patrol &amp; Guarding, Detection, Tracking and SAR — working directly with members of security forces as well as other elite military organizations across Kenya and Africa with high-level threat protection.</p>
       <p>TOPNOTCH K-9 is able to provide comprehensive security solutions tailored to our clients' needs. Our team is comprised of active and retired members of specialized law enforcement units across the country as well as other elite military organizations. Our clients have immediate access to individuals with extensive and unrivaled experience in all areas of Security.</p>
     </div>
@@ -288,7 +161,7 @@
         <div class="value-label">Countries Served</div>
       </div>
       <div class="value-item reveal delay-4">
-        <div class="value-num">4.9<span style="font-size:2rem;">★</span></div>
+        <div class="value-num">4.9<span class="u-fs-2">★</span></div>
         <div class="value-label">Average Rating</div>
       </div>
     </div>
@@ -347,43 +220,6 @@
 
 <!-- CLIENTS / PORTFOLIO -->
 <section class="clients-section" aria-label="Our clients">
-  <style>
-    .clients-section { padding: 80px 0; background: var(--bg-alt); overflow: hidden; }
-    @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .clients-ticker-wrap { position: relative; }
-    .clients-ticker-wrap::before,
-    .clients-ticker-wrap::after {
-      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
-    }
-    .clients-ticker-wrap::before { left: 0; background: linear-gradient(to right, var(--bg-alt), transparent); }
-    .clients-ticker-wrap::after  { right: 0; background: linear-gradient(to left,  var(--bg-alt), transparent); }
-    .clients-ticker { display: flex; width: max-content; animation: marqueeScroll 18s linear infinite; gap: 20px; padding: 8px 0; }
-    .clients-ticker:hover { animation-play-state: paused; }
-    .client-card {
-      flex-shrink: 0; width: 220px;
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: var(--radius-md); padding: 28px 24px;
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-      transition: border-color 0.25s, transform 0.25s;
-      cursor: default;
-    }
-    .client-card:hover { border-color: var(--red); transform: translateY(-4px); }
-    .client-monogram {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: rgba(204,0,0,0.12); border: 1px solid var(--red-border);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
-      color: var(--red); letter-spacing: 0.05em;
-    }
-    .client-name {
-      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--white-70); text-align: center; line-height: 1.4;
-    }
-    .client-type {
-      font-size: 0.68rem; color: var(--white-40); text-align: center;
-    }
-  </style>
   <div class="container">
     <div class="section-header centered reveal">
       <p class="section-label">Portfolio</p>
@@ -391,7 +227,7 @@
       <p class="section-desc">Security companies, hotels and logistics firms across Kenya trust Top Notch K9 teams to protect what matters most.</p>
     </div>
   </div>
-  <div class="clients-ticker-wrap" style="margin-top:48px;">
+  <div class="clients-ticker-wrap u-mt-48">
     <div class="clients-ticker" aria-label="Scrolling client list">
       <!-- first set -->
       <div class="client-card">
@@ -471,7 +307,7 @@
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Patrol & Guarding</a></li><li><a href="services.html">Detection & Tracking</a></li><li><a href="services.html">VIP Protection</a></li><li><a href="services.html">Crowd Control</a></li><li><a href="services.html">Equipment &amp; Accessories</a></li><li><a href="services.html">Veterinary Care</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4>
         <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.58 4.84a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.82a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.92.32 1.86.55 2.82.68a2 2 0 0 1 1.72 2z"/></svg><span>+254 721 448 555<br>+254 754 448 555</span></div>
-        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:clientservice@topnotchk9capability.co.ke" style="color:var(--white-40); word-break:break-word;">clientservice@topnotchk9capability.co.ke</a></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a class="u-contact" href="mailto:clientservice@topnotchk9capability.co.ke">clientservice@topnotchk9capability.co.ke</a></div>
         <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 1 8 8c0 5.25-8 13-8 13S4 15.25 4 10a8 8 0 0 1 8-8z"/></svg><span>Balozi Rd, Bishop Court<br>Kitengela, Kenya</span></div>
       </div>
     </div>

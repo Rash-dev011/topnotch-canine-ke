@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://topnotchk9capability.co.ke/sitemap.xml
