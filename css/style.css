@@ -650,12 +650,13 @@ p { color: var(--white-70); line-height: 1.75; }
   padding-bottom: 10px;
   border-bottom: 1px solid var(--white-10);
 }
-.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul { display: flex; flex-direction: column; gap: 4px; }
 .footer-col a {
   font-size: 0.88rem;
   color: var(--white-40);
   transition: color var(--transition), padding-left var(--transition);
   display: block;
+  padding: 3px 0;
   cursor: pointer;
 }
 .footer-col a:hover { color: var(--white); padding-left: 6px; }
@@ -678,7 +679,7 @@ p { color: var(--white-70); line-height: 1.75; }
 }
 .footer-bottom p { font-size: 0.8rem; color: var(--white-40); }
 .footer-bottom-links { display: flex; gap: 20px; }
-.footer-bottom-links a { font-size: 0.8rem; color: var(--white-40); transition: color var(--transition); cursor: pointer; }
+.footer-bottom-links a { display: inline-block; padding: 6px 0; font-size: 0.8rem; color: var(--white-40); transition: color var(--transition); cursor: pointer; }
 .footer-bottom-links a:hover { color: var(--white); }
 .footer-certs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
 .footer-cert-badge {
@@ -749,7 +750,7 @@ p { color: var(--white-70); line-height: 1.75; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  .footer-col ul { gap: 8px; }
+  .footer-col ul { gap: 2px; }
   .footer-bottom-links { gap: 16px; }
 
   .card { padding: 20px; }
@@ -2113,7 +2114,7 @@ body.page-contact .info-card:hover { border-color: var(--red-border); }
 body.page-contact .info-icon { width: 40px; height: 40px; background: var(--red-subtle); border: 1px solid var(--red-border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 body.page-contact .info-icon svg { width: 18px; height: 18px; stroke: var(--red); }
 body.page-contact .info-label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
-body.page-contact .info-val { font-size: 0.9rem; color: var(--white); line-height: 1.6; }
+body.page-contact .info-val { font-size: 0.9rem; color: var(--white); line-height: 1.6; overflow-wrap: anywhere; }
 body.page-contact .info-val a { color: var(--white); transition: color var(--transition); }
 body.page-contact .info-val a:hover { color: var(--red); }
 

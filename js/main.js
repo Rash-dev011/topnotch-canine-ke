@@ -91,11 +91,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const eyebrow = document.querySelector('.hero-eyebrow');
   if (eyebrow) {
     const textNode = [...eyebrow.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
-    if (textNode) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (textNode && !reduceMotion) {
       const fullText = textNode.textContent.trim();
-      textNode.textContent = '';
+      // Keep the full text available to screen readers and crawlers;
+      // only the visual copy is typed out.
+      const srText = document.createElement('span');
+      srText.className = 'sr-only';
+      srText.textContent = fullText;
+      const typed = document.createElement('span');
+      typed.setAttribute('aria-hidden', 'true');
+      textNode.replaceWith(srText, typed);
       let i = 0;
       const cursor = document.createElement('span');
+      cursor.setAttribute('aria-hidden', 'true');
       cursor.style.cssText = 'display:inline-block;width:2px;height:0.85em;background:var(--red);margin-left:2px;vertical-align:middle;animation:blink 0.8s step-end infinite;';
       eyebrow.appendChild(cursor);
       const style = document.createElement('style');
@@ -104,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         const type = () => {
           if (i < fullText.length) {
-            textNode.textContent += fullText[i++];
+            typed.textContent += fullText[i++];
             setTimeout(type, 38);
           } else {
             setTimeout(() => cursor.remove(), 1200);
@@ -144,6 +153,26 @@ document.addEventListener('DOMContentLoaded', () => {
         else f.style.borderColor = '';
       });
       if (!valid) return;
+
+      // Until a real Web3Forms key is configured, the API runs in demo mode and
+      // reports success without emailing anyone. Route the enquiry to WhatsApp
+      // instead so no lead is silently lost.
+      const key = (contactForm.querySelector('[name="access_key"]') || {}).value || '';
+      if (!key || key === 'YOUR_ACCESS_KEY_HERE') {
+        const fd = new FormData(contactForm);
+        const lines = [
+          'New K9 enquiry (website)',
+          'Name: ' + fd.get('name'),
+          fd.get('company') && 'Company: ' + fd.get('company'),
+          'Email: ' + fd.get('email'),
+          fd.get('phone') && 'Phone: ' + fd.get('phone'),
+          fd.get('service') && 'Service: ' + fd.get('service'),
+          fd.get('location') && 'Location: ' + fd.get('location'),
+          fd.get('message') && 'Details: ' + fd.get('message')
+        ].filter(Boolean);
+        window.open('https://wa.me/254721448555?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+        return;
+      }
 
       btn.disabled = true;
       btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="animation:spin 0.8s linear infinite" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…`;
