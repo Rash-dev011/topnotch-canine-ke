@@ -4,155 +4,17 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Contact Top Notch Canine Capability — Book a K9 security consultation, call +254 721 448 555, or visit us in Kitengela, Kenya. We also have career opportunities."/>
+  <link rel="icon" href="favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
   <title>Contact & Careers | Top Notch Canine Capability</title>
   <link rel="canonical" href="https://topnotchk9capability.co.ke/contact.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    .contact-section { padding: 96px 0; background: #F2F2F2; }
-    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: start; }
-
-    /* Form */
-    .contact-form-wrap {
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: var(--radius-md); padding: 40px; position: relative; overflow: hidden;
-    }
-    .contact-form-wrap::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--red), transparent);
-    }
-    .form-title { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 8px; }
-    .form-sub { font-size: 0.85rem; color: var(--white-40); margin-bottom: 28px; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block; font-family: var(--font-heading); font-size: 0.65rem;
-      font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--white-70); margin-bottom: 8px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: var(--bg-alt);
-      border: 1px solid var(--white-10);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      font-family: var(--font-body); font-size: 0.9rem;
-      color: var(--white);
-      outline: none;
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--white-40); }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--red);
-      box-shadow: 0 0 0 3px var(--red-subtle);
-    }
-    .form-group select { cursor: pointer; appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 12px center;
-    }
-    .form-group select option { background: #111; color: white; }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-submit { width: 100%; justify-content: center; font-size: 0.88rem; padding: 14px; }
-    .form-note { font-size: 0.75rem; color: var(--white-40); text-align: center; margin-top: 12px; }
-
-    /* Contact info */
-    .contact-info { position: sticky; top: calc(var(--nav-h) + 24px); }
-    .contact-info h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #0A0A0A; margin-bottom: 28px; }
-    .info-card {
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: var(--radius-md); padding: 24px; margin-bottom: 16px;
-      display: flex; gap: 16px; align-items: flex-start;
-      transition: border-color var(--transition);
-    }
-    .info-card:hover { border-color: var(--red-border); }
-    .info-icon { width: 40px; height: 40px; background: var(--red-subtle); border: 1px solid var(--red-border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .info-icon svg { width: 18px; height: 18px; stroke: var(--red); }
-    .info-label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
-    .info-val { font-size: 0.9rem; color: var(--white); line-height: 1.6; }
-    .info-val a { color: var(--white); transition: color var(--transition); }
-    .info-val a:hover { color: var(--red); }
-
-    .whatsapp-btn {
-      display: flex; align-items: center; gap: 10px;
-      background: #128C7E; color: white;
-      font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 14px 20px; border-radius: var(--radius);
-      margin-top: 4px; transition: background var(--transition), transform var(--transition);
-      width: 100%; justify-content: center; text-decoration: none;
-    }
-    .whatsapp-btn:hover { background: #25D366; transform: translateY(-2px); }
-    .whatsapp-btn svg { width: 18px; height: 18px; }
-
-    /* Careers */
-    #careers { padding: 96px 0; background: var(--bg-alt); }
-    .career-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-    .career-card {
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: var(--radius-md); padding: 28px; position: relative;
-      transition: border-color var(--transition), transform var(--transition-slow);
-    }
-    .career-card:hover { border-color: var(--red-border); transform: translateY(-3px); }
-    .career-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-    .career-title { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); }
-    .career-type { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: var(--radius); background: var(--red-subtle); border: 1px solid var(--red-border); color: var(--red); white-space: nowrap; }
-    .career-desc { font-size: 0.85rem; color: var(--white-40); line-height: 1.7; margin-bottom: 20px; }
-    .career-reqs { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-40); margin-bottom: 8px; }
-    .career-req-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
-    .career-req-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--white-70); }
-    .career-req-item svg { width: 13px; height: 13px; stroke: var(--red); flex-shrink: 0; }
-    .career-apply {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--red); transition: gap var(--transition); cursor: pointer; text-decoration: none;
-    }
-    .career-apply:hover { gap: 10px; }
-    .career-apply svg { width: 13px; height: 13px; }
-
-    @media (max-width: 1024px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .contact-info { position: static; }
-      .career-cards { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .contact-section { padding: 64px 0; }
-      #careers { padding: 56px 0 64px; }
-      .career-cards { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .contact-section { padding: 48px 0; }
-      #careers { padding: 48px 0 56px; }
-      .form-row { grid-template-columns: 1fr; }
-      .contact-form-wrap { padding: 24px; }
-      .contact-info h3 { margin-bottom: 20px; }
-    }
-    @media (max-width: 480px) {
-      .contact-form-wrap { padding: 20px; }
-      .info-card { padding: 18px; gap: 12px; }
-      .whatsapp-btn { padding: 12px 16px; font-size: 0.78rem; }
-      .career-card { padding: 22px; }
-    }
-    @media (max-width: 375px) {
-      .contact-section { padding: 40px 0; }
-      .form-title { font-size: 1.2rem; }
-      .contact-form-wrap { padding: 16px; }
-      .form-group input, .form-group select, .form-group textarea { padding: 10px 12px; font-size: 0.85rem; }
-      .career-title { font-size: 0.92rem; }
-      .career-desc { font-size: 0.8rem; }
-    }
-  </style>
 </head>
-<body>
+<body class="page-contact">
 
 <!-- NAVBAR -->
 <nav id="navbar" aria-label="Main navigation">
@@ -305,8 +167,8 @@
 
 <!-- CAREERS -->
 <section id="careers" aria-label="Career opportunities">
-  <div class="container" style="padding-top:0;">
-    <div class="section-header reveal" style="padding-top:80px; border-top:1px solid var(--white-10);">
+  <div class="container u-pt-0">
+    <div class="section-header reveal u-section-divider">
       <p class="section-label">Join the Team</p>
       <h2 class="section-title">Career <span>Opportunities</span></h2>
       <p class="section-desc">We are always looking for exceptional K9 handlers, trainers and support staff who share our commitment to security excellence.</p>
@@ -391,7 +253,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer id="footer" style="margin-top:80px;" aria-label="Site footer">
+<footer class="u-mt-80" id="footer" aria-label="Site footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><div class="footer-logo"><img src="images/logo.svg" alt="" aria-hidden="true"><div class="footer-logo-text"><div class="top">TOP NOTCH</div><div class="sub">Canine Capability</div></div></div><p>Kenya's premier K9 security solutions provider since 2016.</p><div class="footer-certs"><span class="footer-cert-badge">NASDU</span><span class="footer-cert-badge">PROSAK</span><span class="footer-cert-badge">EAKC</span></div></div>
@@ -399,7 +261,7 @@
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Detection Dog Training</a></li><li><a href="services.html">Supply of Trained Dogs</a></li><li><a href="services.html">Dog Handlers Training</a></li><li><a href="services.html">Veterinary Care</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4>
         <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.58 4.84a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.82a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.92.32 1.86.55 2.82.68a2 2 0 0 1 1.72 2z"/></svg><span>+254 721 448 555<br>+254 754 448 555</span></div>
-        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:clientservice@topnotchk9capability.co.ke" style="color:var(--white-40); word-break:break-word; font-size:0.82rem;">clientservice@topnotchk9capability.co.ke</a></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a class="u-contact-sm" href="mailto:clientservice@topnotchk9capability.co.ke">clientservice@topnotchk9capability.co.ke</a></div>
         <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 1 8 8c0 5.25-8 13-8 13S4 15.25 4 10a8 8 0 0 1 8-8z"/></svg><span>Balozi Rd, Bishop Court<br>Kitengela, Kenya</span></div>
       </div>
     </div>

@@ -4,117 +4,17 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Top Notch Canine Capability — Our working dog breeds: Belgian Malinois, Labrador Retriever, and Rottweiler. Selectively bred from proven European bloodlines."/>
+  <link rel="icon" href="favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
   <title>Our Breeds | Top Notch Canine Capability</title>
   <link rel="canonical" href="https://topnotchk9capability.co.ke/breeds.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    /* Breeds page — card grid */
-    .breeds-page { padding: 96px 0; background: #F2F2F2; }
-    .breeds-page .section-title { color: #0A0A0A; }
-    .breeds-page .section-title span { color: var(--red); }
-    .breeds-page .section-desc { color: #555; }
-
-    .breeds-all-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .breed-card-detail {
-      background: var(--bg-card);
-      border: 1px solid var(--white-10);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      transition: border-color var(--transition), transform var(--transition-slow);
-      cursor: default;
-    }
-    .breed-card-detail:hover {
-      border-color: var(--red-border);
-      transform: translateY(-6px);
-    }
-
-    .breed-img {
-      height: 220px;
-      background: linear-gradient(135deg, #141414, #0a0a0a);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .breed-img .site-photo { object-fit: contain; }
-    .breed-img svg { width: 80px; height: 80px; stroke: rgba(255,255,255,0.08); }
-    .breed-img-label {
-      position: absolute; top: 12px; left: 12px;
-      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      background: var(--red); color: var(--white);
-      padding: 4px 10px; border-radius: var(--radius);
-      z-index: 2;
-    }
-
-    .breed-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-    .breed-name {
-      font-family: var(--font-heading); font-size: 1rem; font-weight: 700;
-      letter-spacing: 0.04em; text-transform: uppercase; color: var(--white);
-      margin-bottom: 8px;
-    }
-    .breed-desc { font-size: 0.82rem; color: var(--white-70); line-height: 1.7; margin-bottom: 12px; flex: 1; }
-    .breed-meta {
-      display: flex; flex-wrap: wrap; gap: 12px;
-      font-size: 0.75rem; color: var(--white-40);
-      margin-bottom: 12px; padding-top: 10px;
-      border-top: 1px solid var(--white-10);
-    }
-    .breed-meta strong { color: var(--white-70); }
-    .breed-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .breed-tag {
-      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 4px 8px;
-      border: 1px solid var(--red-border);
-      border-radius: var(--radius);
-      color: var(--red); background: var(--red-subtle);
-    }
-
-    .breeding-note { padding: 56px 0; background: var(--bg-alt); }
-    .breeding-note-inner {
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: var(--radius-md); padding: 40px; position: relative; overflow: hidden;
-      display: flex; gap: 32px; align-items: flex-start;
-    }
-    .breeding-note-inner::before {
-      content: '';
-      position: absolute; top: 0; left: 0; width: 4px; height: 100%;
-      background: var(--red);
-    }
-    .breeding-icon { width: 48px; height: 48px; background: var(--red-subtle); border: 1px solid var(--red-border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .breeding-icon svg { width: 22px; height: 22px; stroke: var(--red); }
-    .breeding-note-inner h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 10px; }
-    .breeding-note-inner p { color: var(--white-70); font-size: 0.9rem; line-height: 1.8; }
-
-    @media (max-width: 1280px) { .breeds-all-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 768px) {
-      .breeds-page { padding: 64px 0; }
-      .breeds-all-grid { grid-template-columns: repeat(2, 1fr); }
-      .breeding-note { padding: 40px 0; }
-      .breeding-note-inner { flex-direction: column; gap: 20px; padding: 28px; }
-    }
-    @media (max-width: 640px) {
-      .breeds-page { padding: 48px 0; }
-      .breed-img { height: 180px; }
-    }
-    @media (max-width: 480px) {
-      .breeds-all-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 375px) {
-      .breeds-page { padding: 40px 0; }
-      .breeding-note-inner { padding: 20px 16px; }
-    }
-  </style>
 </head>
-<body>
+<body class="page-breeds">
 
 <!-- NAVBAR -->
 <nav id="navbar" aria-label="Main navigation">
@@ -158,7 +58,7 @@
       <!-- German Shepherd -->
       <article class="breed-card-detail reveal delay-1" aria-labelledby="breed-gsd">
         <div class="breed-img" role="img" aria-label="German Shepherd working dog">
-          <img src="https://imgs.search.brave.com/uuaMys7e04P-RGEFEevn0jmajxJTkJ8zrSwHSpSz12I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM1/MDcwODczNC9waG90/by9wb3J0cmFpdC1v/Zi1hLXlvdW5nLWdl/cm1hbi1zaGVwaGVy/ZC1kb2cuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPW00Zjhu/VXp3T3VUdENPaHF1/akVpanRnN29SZlJ1/d2dLNUtYb2NDTm5H/Nzg9" alt="German Shepherd working dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <div class="breed-img-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5" cy="10" rx="2" ry="2.6"/><ellipse cx="9.2" cy="5.6" rx="2" ry="2.6"/><ellipse cx="14.8" cy="5.6" rx="2" ry="2.6"/><ellipse cx="19" cy="10" rx="2" ry="2.6"/><path d="M12 11c-3 0-6.5 4.2-6.5 7 0 1.9 1.6 3 3.4 3 1.2 0 2-.6 3.1-.6s1.9.6 3.1.6c1.8 0 3.4-1.1 3.4-3 0-2.8-3.5-7-6.5-7z"/></svg></div>
           <span class="breed-img-label">Multi-Role</span>
         </div>
         <div class="breed-body">
@@ -174,7 +74,7 @@
       <!-- Belgian Malinois -->
       <article class="breed-card-detail reveal delay-2" aria-labelledby="breed-mali">
         <div class="breed-img" role="img" aria-label="Belgian Malinois working dog">
-          <img src="https://imgs.search.brave.com/v-Zq0epML4ZbQj3cb0C6C2GvUvjLVkIaHppGIEn7_58/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2FyZWNyZWRpdC5j/b20vc2l0ZXMvY2Mv/aW1hZ2UvaGVyb19i/ZWxnaWFuX21hbGlu/b2lzLmpwZw" alt="Belgian Malinois working dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <img src="https://images.unsplash.com/photo-1599826023510-a98d08764aec?q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Belgian Malinois working dog" class="site-photo cover" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
           <span class="breed-img-label">Most Deployed</span>
         </div>
         <div class="breed-body">
@@ -190,7 +90,7 @@
       <!-- Labrador Retriever -->
       <article class="breed-card-detail reveal delay-3" aria-labelledby="breed-lab">
         <div class="breed-img" role="img" aria-label="Labrador Retriever detection dog">
-          <img src="https://imgs.search.brave.com/0sipzCsnNWDLMBA87jqaOPqe-b6ZGtGUcvrS_P2c58Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMi8w/OC8wMS8yMC8zMy9k/b2ctNzM1ODk1M182/NDAuanBn" alt="Labrador Retriever detection dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <img src="images/action-springer-luggage.jpg" alt="Labrador Retriever detection dog" class="site-photo cover" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
           <span class="breed-img-label">Detection Expert</span>
         </div>
         <div class="breed-body">
@@ -206,7 +106,7 @@
       <!-- Springer Spaniel -->
       <article class="breed-card-detail reveal delay-1" aria-labelledby="breed-springer">
         <div class="breed-img" role="img" aria-label="Springer Spaniel detection dog">
-          <img src="https://imgs.search.brave.com/060z0i4lyaJLjCKKCcNkIlRMMSnpRGbM_7GczUzmTDI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9oYXBw/eS1lbmdsaXNoLXNw/cmluZ2VyLXNwYW5p/ZWwtZG9nLXJ1bm5p/bmctcGxheWluZy1l/bmdsaXNoLXNwcmlu/Z2VyLXNwYW5pZWwt/cnVubmluZy1lbmVy/Z2V0aWNhbGx5LWdy/YXNzLWRvZy00NDcz/ODk0MjIuanBn" alt="Springer Spaniel detection dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <img src="images/action-dog-aircraft.jpg" alt="Springer Spaniel detection dog" class="site-photo cover" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
           <span class="breed-img-label">Compact Detector</span>
         </div>
         <div class="breed-body">
@@ -222,7 +122,7 @@
       <!-- Cocker Spaniel -->
       <article class="breed-card-detail reveal delay-2" aria-labelledby="breed-cocker">
         <div class="breed-img" role="img" aria-label="Cocker Spaniel detection dog">
-          <img src="https://imgs.search.brave.com/8-FzUGbGGJbP4Wlg-NzgVRjo7YBtWT7jGOTG7Na9qi4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQw/Mzk0NTY3L3Bob3Rv/L2NvY2tlci1zcGFu/aWVsLWluLWZ1bGwt/d2luZC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9THJVcFp1/LTY5bnc5NktOWW91/U0s4WXBMRUo3RVRo/Z0ZWeEVmcHR0R3Yw/Yz0" alt="Cocker Spaniel detection dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <div class="breed-img-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5" cy="10" rx="2" ry="2.6"/><ellipse cx="9.2" cy="5.6" rx="2" ry="2.6"/><ellipse cx="14.8" cy="5.6" rx="2" ry="2.6"/><ellipse cx="19" cy="10" rx="2" ry="2.6"/><path d="M12 11c-3 0-6.5 4.2-6.5 7 0 1.9 1.6 3 3.4 3 1.2 0 2-.6 3.1-.6s1.9.6 3.1.6c1.8 0 3.4-1.1 3.4-3 0-2.8-3.5-7-6.5-7z"/></svg></div>
           <span class="breed-img-label">Passive Indicator</span>
         </div>
         <div class="breed-body">
@@ -238,7 +138,7 @@
       <!-- Dutch Shepherd -->
       <article class="breed-card-detail reveal delay-3" aria-labelledby="breed-dutch">
         <div class="breed-img" role="img" aria-label="Dutch Shepherd working dog">
-          <img src="https://imgs.search.brave.com/O_Ci_H8TlDZQ6Wm_PzYBub4cOM__Wngi2ZnXAAjpfOM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZXQt/aGVhbHRoLWNvbnRl/bnQtbWVkaWEuY2hl/d3kuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDI2LzA3LzAx/MTc0MTEyL2R1dGNo/LXNoZXBoZXJkLmpw/Zw" alt="Dutch Shepherd working dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <div class="breed-img-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5" cy="10" rx="2" ry="2.6"/><ellipse cx="9.2" cy="5.6" rx="2" ry="2.6"/><ellipse cx="14.8" cy="5.6" rx="2" ry="2.6"/><ellipse cx="19" cy="10" rx="2" ry="2.6"/><path d="M12 11c-3 0-6.5 4.2-6.5 7 0 1.9 1.6 3 3.4 3 1.2 0 2-.6 3.1-.6s1.9.6 3.1.6c1.8 0 3.4-1.1 3.4-3 0-2.8-3.5-7-6.5-7z"/></svg></div>
           <span class="breed-img-label">Military Grade</span>
         </div>
         <div class="breed-body">
@@ -254,7 +154,7 @@
       <!-- Rottweiler -->
       <article class="breed-card-detail reveal delay-1" aria-labelledby="breed-rott">
         <div class="breed-img" role="img" aria-label="Rottweiler guard dog">
-          <img src="https://imgs.search.brave.com/TWFtvTHEQZVcz97LSecRv1Q29SoBRWFPyVTxgdmWzN4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzY0LzYyLzEw/LzM2MF9GXzI2NDYy/MTAwNF9qeEVqdkZh/WkVWVUUwT21YakRW/Q3FBWThDalkweHBj/WC5qcGc" alt="Rottweiler guard dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <img src="https://images.unsplash.com/photo-1665333354010-050f08f35907?q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Rottweiler guard dog" class="site-photo cover" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
           <span class="breed-img-label">Guard Specialist</span>
         </div>
         <div class="breed-body">
@@ -270,7 +170,7 @@
       <!-- Belgian Shepherd -->
       <article class="breed-card-detail reveal delay-2" aria-labelledby="breed-belg-shep">
         <div class="breed-img" role="img" aria-label="Belgian Shepherd working dog">
-          <img src="https://imgs.search.brave.com/s7mltsd_7A3FfZWelimCKZn7mqy0xndPiUoGMmuC-NQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/ZmFzdGx5LnBldGd1/aWRlLmNvbS9tZWRp/YS8yMDIyLzAyLzE2/LzgyMzQ3MTkvYmVs/Z2lhbi1zaGVwaGVy/ZC5qcGc_c2l6ZT03/MjB4ODQ1Jm5vY3Jv/cD0x" alt="Belgian Shepherd working dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <div class="breed-img-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5" cy="10" rx="2" ry="2.6"/><ellipse cx="9.2" cy="5.6" rx="2" ry="2.6"/><ellipse cx="14.8" cy="5.6" rx="2" ry="2.6"/><ellipse cx="19" cy="10" rx="2" ry="2.6"/><path d="M12 11c-3 0-6.5 4.2-6.5 7 0 1.9 1.6 3 3.4 3 1.2 0 2-.6 3.1-.6s1.9.6 3.1.6c1.8 0 3.4-1.1 3.4-3 0-2.8-3.5-7-6.5-7z"/></svg></div>
           <span class="breed-img-label">Patrol &amp; Protection</span>
         </div>
         <div class="breed-body">
@@ -286,7 +186,7 @@
       <!-- Russian Mountain -->
       <article class="breed-card-detail reveal delay-3" aria-labelledby="breed-russian">
         <div class="breed-img" role="img" aria-label="Russian Mountain Dog estate guardian">
-          <img src="https://imgs.search.brave.com/U2HQAzIrw578ci_zyqDyUsGqEFYjcLyjjcSyMt4snkk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHRl/cm5hbC1wcmV2aWV3/LnJlZGQuaXQvbU1a/YzdjcHFCNWtkc2M4/cWQxNjFVMEhHS1FM/TzZQZjdja2tVTXVo/bHd4Yy5qcGc_d2lk/dGg9NjQwJmNyb3A9/c21hcnQmYXV0bz13/ZWJwJnM9ZDMxZGIw/MjA3ZTVhYjMzOTM4/Y2U4ZGM3YWY4OWVi/ZDI4YmEyMzc1YQ" alt="Russian Mountain Dog estate guardian" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <div class="breed-img-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5" cy="10" rx="2" ry="2.6"/><ellipse cx="9.2" cy="5.6" rx="2" ry="2.6"/><ellipse cx="14.8" cy="5.6" rx="2" ry="2.6"/><ellipse cx="19" cy="10" rx="2" ry="2.6"/><path d="M12 11c-3 0-6.5 4.2-6.5 7 0 1.9 1.6 3 3.4 3 1.2 0 2-.6 3.1-.6s1.9.6 3.1.6c1.8 0 3.4-1.1 3.4-3 0-2.8-3.5-7-6.5-7z"/></svg></div>
           <span class="breed-img-label">Estate Guardian</span>
         </div>
         <div class="breed-body">
@@ -302,7 +202,7 @@
       <!-- South African Mastiff -->
       <article class="breed-card-detail reveal delay-1" aria-labelledby="breed-boerboel">
         <div class="breed-img" role="img" aria-label="South African Mastiff guard dog">
-          <img src="https://imgs.search.brave.com/TLreKPLJv3jyXHBjk-_4P4bxuEPmpmrZF8FGpNuuZG8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9zb3V0aC1h/ZnJpY2FuLWJvZXJi/b2VsLW1hc3RpZmYt/ZG9nLTYwMG53LTE5/MTQ5Njc2OTkuanBn" alt="South African Mastiff guard dog" class="site-photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+          <div class="breed-img-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5" cy="10" rx="2" ry="2.6"/><ellipse cx="9.2" cy="5.6" rx="2" ry="2.6"/><ellipse cx="14.8" cy="5.6" rx="2" ry="2.6"/><ellipse cx="19" cy="10" rx="2" ry="2.6"/><path d="M12 11c-3 0-6.5 4.2-6.5 7 0 1.9 1.6 3 3.4 3 1.2 0 2-.6 3.1-.6s1.9.6 3.1.6c1.8 0 3.4-1.1 3.4-3 0-2.8-3.5-7-6.5-7z"/></svg></div>
           <span class="breed-img-label">Property Guard</span>
         </div>
         <div class="breed-body">
