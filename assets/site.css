@@ -7,10 +7,64 @@
   --p-inv-accent: #c8001e; --p-inv-accent-ink: #f4f3f0; --p-inv-action: #c8001e; --p-inv-action-ink: #f4f3f0;
   --font-display: "Red Hat Display", system-ui, sans-serif;
   --font-text: "Red Hat Text", system-ui, sans-serif;
-  --display-weight: 400;
-  --display-tracking: -0.025em;
-  --display-tracking-xl: -0.035em;
+  --font-mono: "Red Hat Mono", ui-monospace, Menlo, Consolas, monospace;
+  /* a firmer, tighter headline than the default 400: the disciplined voice of a defence or
+     professional-services firm (references: Wolverine Worldwide, General Cherry) */
+  --display-weight: 500;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
 }
+
+/* labels in the family's mono, upper case and tracked: the spec-sheet voice of a defence firm
+   (reference: General Cherry's mono labels and spec rows) */
+.t-label, .hero__facts dt, .ly-float__row, .person__role, .footer__col h3 {
+  font-family: var(--font-mono); font-size: var(--t-label); font-weight: 400;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+
+/* one grade over every photograph, so the client's own pictures from different days and cameras
+   read as one set: a little less colour, a little more contrast */
+:is(.frame__img, .hero__media > img, .tile__media img) { filter: saturate(.85) contrast(1.05); }
+
+/* numbered rows: a service list read like a spec sheet, its number in the accent */
+.rows--index { counter-reset: row; }
+.rows--index > li { grid-template-columns: 48px minmax(0, 1fr); }
+.rows--index > li::before {
+  counter-increment: row; content: counter(row, decimal-leading-zero); grid-row: 1 / span 2;
+  font: 500 var(--t-label)/1.6 var(--font-mono); letter-spacing: .06em; color: var(--accent);
+}
+.rows--index > li > :is(.rows__name, p) { grid-column: 2; }
+@media (max-width: 639px) { .rows--index > li { grid-template-columns: 28px minmax(0, 1fr); column-gap: var(--s-3); } }
+
+/* the record: one sentence set at the h2 size across the page, the proof figures under it on hairlines */
+.statement__text { font: var(--display-weight) var(--t-h2)/1.18 var(--font-display); letter-spacing: var(--display-tracking);
+  max-width: 28ch; margin: 0; text-wrap: balance; }
+#clients > .wrap { display: flex; flex-direction: column; justify-content: center; }
+#record .stats .t-stat { font-size: var(--t-stat); color: var(--accent); font-variant-numeric: tabular-nums; }
+/* on a wide screen the figures are the band's second statement: large, red, on the section's foot */
+@media (min-width: 1024px) {
+  #record > .wrap { display: flex; flex-direction: column; }
+  #record .stats { margin-top: auto; }
+  #record .stats .t-stat { font-size: clamp(64px, 5.2vw, 104px); line-height: 1.1; letter-spacing: -0.03em; }
+}
+/* the client quotes set larger, so the band reads as its own statement */
+#clients blockquote { font-size: clamp(22px, 1.33vw + 16.8px, 36px); line-height: 1.25; letter-spacing: var(--display-tracking); }
+#clients .quote .person { margin-top: var(--s-6); }
+/* the split hero's facts stand only where the hero has the room beside its picture (a wide, tall screen) */
+@media (max-width: 1023px), (max-height: 819px) { .hero--split .hero__facts { display: none; } }
+/* the record: the proof figures follow the sentence after one big step */
+@media (max-width: 1023px) { #record .stats { margin-top: var(--s-6); } }
+
+/* the giant type on the dark band: a dark tint, so the photograph reads through the letters instead of
+   being washed out to grey by the light ink */
+#statement .mo-gt__type { --mo-tint: rgb(0 0 0 / .12); font-weight: 700; letter-spacing: -0.045em; }
+@media (max-width: 639px) { #statement .mo-gt__type { font-size: 22vw; } }
+#record .stats dt { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .06em; font-size: var(--t-label); }
+
+/* the split hero's facts: one column of hairline rows under the buttons, out on a phone, where the
+   lead carries the hard fact */
+.hero--split .hero__facts { margin-top: var(--s-8); }
+@media (max-width: 639px) { .hero--split .hero__facts { display: none; } }
 
 .nav__logo img { width: 32px; height: 32px; }
 

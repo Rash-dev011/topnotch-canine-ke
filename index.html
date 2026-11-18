@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-type="service" data-radius="soft" data-buttons="tonal" data-motion>
+<html lang="en" data-type="service" data-radius="sharp" data-buttons="tonal" data-motion>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -48,7 +48,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&family=Red+Hat+Text:wght@400..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&family=Red+Hat+Text:wght@400..600&family=Red+Hat+Mono:wght@400..500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/system.css">
 <link rel="stylesheet" href="assets/ui/cards.css">
 <link rel="stylesheet" href="assets/motion/motion.css">
@@ -58,15 +58,16 @@
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<link rel="modulepreload" href="assets/moments/giant-type-pass/moment.js">
+<link rel="modulepreload" href="assets/moments/pinned-chapters/moment.js">
 <!-- page CSS: only what sits inside a visual -->
 <style>
-  #about .frame__img { object-position: 50% 0%; }
-  #work .frame--photo { --ratio: 62%; }
-  #work .frame__img { object-position: 50% 45%; }
+  .hero__media > img { object-position: 50% 30%; }
+  #about .develop { position: relative; overflow: hidden; border-radius: var(--r-lg); height: 100%; min-height: 420px; margin: 0; }
+  #about .develop img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 4%; }
+  #breeds .frame__img { object-position: 50% 40%; }
+  @media (max-width: 1023px) { #about .develop { height: auto; aspect-ratio: 2 / 3; min-height: 0; max-width: 474px; } }
   @media (min-width: 640px) and (max-width: 1023px) { #breeds { --h: 2 } }
-  @media (max-width: 1023px) { #work .grid > .frame--photo:nth-child(2), #work .quote:nth-child(3) { display: none; } }
-  @media (max-width: 639px) { #breeds .tile { --tile-ratio: 3 / 5; } }
 </style>
 </head>
 <body>
@@ -75,12 +76,19 @@
      footer footer-dark, rhythm dark-band, buttons tonal, mark wordmark (the client's own logo replaces it)
      palette: the client's own colours (start.mjs brand): logo red #c8001e on a pale stone ground, near-black ink
      type: red-hat (Red Hat Display / Red Hat Text)
-     moments: word-highlight in #record -->
+     premium pass (Awwwards references General Cherry, Wolverine Worldwide, South and Stone, Serein Wealth),
+     asked for by the client ("more umpff, scroll effects"), past the kit's two-moment and light-hero defaults:
+     dark header and hero (General Cherry), radius sharp, display 500 tightened, mono labels (Red Hat Mono),
+     one photo grade, numbered service rows.
+     moments: giant-type-pass in #statement (General Cherry's wordmark, Wolverine's masked photograph),
+     pinned-chapters in #work, counter-rolls in #record, picture-develops in #about.
+     No reference code, copy or picture is used. -->
 
-<header class="nav nav--centre">
+
+<header class="nav nav--centre ground-inverse">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top">Skip to content</a>
-    <a class="nav__logo" href="#top"><img src="images/logo.svg" alt="" width="32" height="32">Top Notch Canine</a>
+    <a class="nav__logo" href="#top"><img src="images/logo-light.svg" alt="" width="32" height="32">Top Notch Canine</a>
     <nav class="nav__links" aria-label="Main">
       <div class="nav__item">
         <a class="nav__link" href="services.html">Services <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -105,7 +113,7 @@
       <div class="nav__item"><a class="nav__link" href="about.html">About</a></div>
       <div class="nav__item"><a class="nav__link" href="contact.html#careers">Careers</a></div>
       <div class="nav__item"><a class="nav__link" href="contact.html">Contact</a></div>
-
+    </nav>
     <div class="nav__actions">
       <a class="btn btn--primary" href="#request">Request a K9 team</a>
     </div>
@@ -116,15 +124,20 @@
 </header>
 
 <main id="top">
-  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
+  <section class="hero hero--split ground-inverse" data-enter aria-labelledby="hero-h">
     <div class="wrap"><div class="hero-text grid hero__grid">
       <div class="hero__text span-5">
         <h1 id="hero-h">Trained security dogs and handlers in Kenya</h1>
         <p class="hero__lead">Narcotics and explosives detection, patrol dogs and handler courses for airports, sea ports, hotels and security firms. In Kenya, Uganda and Tanzania since 2016.</p>
         <div class="btn-row"><a class="btn btn--primary" href="#request">Request a K9 team<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#services">See the services</a></div>
+        <dl class="hero__facts hero__facts--col">
+          <div><dt>Training standard</dt><dd>NASDU</dd></div>
+          <div><dt>Working breeds</dt><dd>Ten</dd></div>
+          <div><dt>Head of training</dt><dd>Ex-Military Police</dd></div>
+        </dl>
       </div>
       <div class="hero__media span-6 start-7">
-        <img src="images/action-detection-vest.jpg" width="732" height="844" alt="A detection dog searching the seats of an aircraft cabin" style="--ly-pos: 50% 40%" fetchpriority="high" data-source="client" data-subject="detection dog searching an aircraft cabin">
+        <img src="images/svc-supply-dogs.jpg" width="736" height="1187" alt="A Belgian Malinois facing the camera" style="--ly-pos: 50% 30%" fetchpriority="high" data-source="client" data-subject="Belgian Malinois">
         <div class="ly-float">
           <div class="ly-float__row"><span class="ly-live">Every day</span><span>06:00 to 20:00</span></div>
           <div class="ly-float__title">Balozi Road, Kitengela</div>
@@ -139,7 +152,7 @@
         <div class="span-5 stack-4">
           <h2 id="services-h">Detection, patrol and handler training</h2>
           <p>Every dog is assessed for drive, temperament and health, then certified before it is placed.</p>
-          <ul class="rows">
+          <ul class="rows rows--index">
             <li><span class="rows__name">Detection dog training</span><p>Cocaine, heroin, cannabis, methamphetamine and explosives, to NASDU standards.</p></li>
             <li><span class="rows__name">Supply of trained dogs</span><p>Patrol, VIP protection, detection and crowd deterrence dogs.</p></li>
             <li><span class="rows__name">Dog handler training</span><p>Obedience, off-leash control, search procedure and handler safety.</p></li>
@@ -154,21 +167,58 @@
     </div>
   </section>
 
-  <section class="section g2 ground-inverse" id="work" aria-labelledby="work-h">
+  <!-- giant-type-pass: three words across the page, a detection photograph passing up through the letters -->
+  <section class="section ground-inverse" id="statement" data-moment="giant-type-pass" data-moment-opts='{"image": "../../../images/action-detection-vest.jpg", "travel": 70, "focusY": 70}' aria-labelledby="statement-h">
     <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="work-h">Dog teams at airports, ports and checkpoints</h2>
-          <p>They search buses, aircraft, cargo, luggage and buildings, and track people on the ground.</p>
-        </div>
-        <div class="grid">
-          <div class="frame frame--photo span-6">
-            <img class="frame__img" src="images/action-malinois-handler.jpg" width="727" height="848" alt="A shepherd dog searching the luggage rack above a bus window" loading="lazy" data-source="client" data-subject="detection dog searching a bus">
-          </div>
-          <div class="frame frame--photo span-6">
-            <img class="frame__img" src="images/action-dog-aircraft.jpg" width="733" height="841" alt="A Springer Spaniel sniffing a row of suitcases" loading="lazy" data-source="client" data-subject="detection dog screening luggage">
-          </div>
-        </div>
+      <h2 class="mo-gt__type" id="statement-h">Detection,<br>patrol and<br>guard dogs.</h2>
+      <div class="mo-gt__row"><p>Detection, patrol and protection dogs, assessed and certified in Kitengela before they are placed.</p><a class="link" href="services.html">See all eight services</a></div>
+    </div>
+  </section>
+
+  <!-- pinned-chapters: the section holds while the three places a team searches open one by one -->
+  <section class="section" id="work" style="--h: 2" data-moment="pinned-chapters" aria-labelledby="work-h">
+    <div class="wrap mo-pc__grid">
+      <div class="mo-pc__text">
+        <h2 id="work-h">Dog teams at airports, ports and checkpoints</h2>
+        <ol class="mo-pc__steps">
+          <li class="mo-pc__step">
+            <h3>Detection dogs in aircraft cabins</h3>
+            <p>Cabins searched seat by seat for narcotics and explosives.</p>
+            <figure class="mo-pc__visual"><img src="images/action-detection-vest.jpg" alt="A detection dog searching the seats of an aircraft cabin" width="732" height="844" data-source="client"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Search dogs at bus checkpoints</h3>
+            <p>Seats and luggage racks checked before the bus moves on.</p>
+            <figure class="mo-pc__visual"><img src="images/action-malinois-handler.jpg" alt="A shepherd dog searching the luggage rack above a bus window" width="727" height="848" data-source="client"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Detection dogs on luggage and cargo</h3>
+            <p>Suitcases and cargo screened in rows, the handler beside the dog.</p>
+            <figure class="mo-pc__visual"><img src="images/action-dog-aircraft.jpg" alt="A Springer Spaniel sniffing a row of suitcases" width="733" height="841" data-source="client"></figure>
+          </li>
+        </ol>
+      </div>
+      <div class="mo-pc__visuals frame"></div>
+    </div>
+  </section>
+
+  <section class="section statement" id="record" aria-labelledby="record-h">
+    <div class="wrap stack-7">
+      <h2 class="t-label" id="record-h">Our training record</h2>
+      <p class="statement__text">Our head of training ran K9 security at Adan Abdulle International Airport and Mogadishu sea port, and trained Kenyan military dog units. Every team we deploy is trained to that standard.</p>
+      <!-- counter-rolls: the three figures roll once like an odometer and stop on the real number -->
+      <dl class="stats" data-moment="counter-rolls">
+        <div><dt class="t-small muted">Working from Kitengela since</dt><dd class="t-stat">2016</dd></div>
+        <div><dt class="t-small muted">Countries: Kenya, Uganda, Tanzania</dt><dd class="t-stat">3</dd></div>
+        <div><dt class="t-small muted">Hours to reply to a request</dt><dd class="t-stat">24</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section ground-inverse" id="clients" aria-labelledby="clients-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="clients-h">Security firms and hotels that work with our teams</h2>
       </div>
       <div class="grid">
         <figure class="quote span-4">
@@ -187,14 +237,7 @@
     </div>
   </section>
 
-  <section class="section statement" id="record" data-moment="word-highlight" aria-label="Our record">
-    <div class="wrap">
-      <p class="t-label">Our record</p>
-      <p class="mo-wh__text">Our head of training ran K9 security at Adan Abdulle International Airport and Mogadishu sea port, and trained Kenyan military dog units. Every team we deploy is trained to <strong>that standard</strong>.</p>
-    </div>
-  </section>
-
-  <section class="section" id="about" style="--hm: 2" aria-labelledby="about-h">
+  <section class="section" id="about" aria-labelledby="about-h">
     <div class="wrap">
       <div class="grid fill">
         <div class="span-5 stack-4">
@@ -206,35 +249,27 @@
           </ul>
           <p><a class="link" href="about.html">Read his full profile</a></p>
         </div>
-        <div class="frame frame--photo frame--fill span-6 start-7">
-          <img class="frame__img" src="images/founder.jpg" width="474" height="1200" alt="Bonifance Mokua in uniform beside a shepherd dog" loading="lazy" data-source="client" data-subject="Bonifance Mokua, director">
-        </div>
+        <!-- picture-develops: his photograph comes up like a print in the tray as it comes on screen -->
+        <figure class="develop span-6 start-7" data-moment="picture-develops"><img src="images/founder.jpg" width="474" height="1200" alt="Bonifance Mokua in uniform beside a shepherd dog" loading="lazy" data-source="client" data-subject="Bonifance Mokua, director"></figure>
       </div>
     </div>
   </section>
 
   <section class="section" id="breeds" style="--hm: 2" aria-labelledby="breeds-h">
     <div class="wrap">
-      <div class="section-head section-head--row">
-        <h2 id="breeds-h">The working dog breeds we deploy most</h2>
-        <a class="link" href="breeds.html">See all ten breeds</a>
-      </div>
       <div class="grid fill">
-        <a class="tile tile--portrait span-4" href="breeds.html#breed-mali">
-          <div class="tile__media"><img src="images/svc-supply-dogs.jpg" width="736" height="1187" alt="A Belgian Malinois facing the camera" loading="lazy" data-source="client" data-subject="Belgian Malinois"></div>
-          <h3>Belgian Malinois</h3>
-          <p>Patrol and detection. Our most deployed dog.</p>
-        </a>
-        <a class="tile tile--portrait span-4" href="breeds.html#breed-lab">
-          <div class="tile__media"><img src="images/action-springer-luggage.jpg" width="731" height="848" alt="A black Labrador in a yellow harness sniffing a bag" loading="lazy" data-source="client" data-subject="Labrador Retriever"></div>
-          <h3>Labrador Retriever</h3>
-          <p>Narcotics, explosives and cargo screening.</p>
-        </a>
-        <a class="tile tile--portrait span-4" href="breeds.html#breed-rott">
-          <div class="tile__media"><img src="images/breed-rottweiler.jpg" width="1000" height="667" alt="A Rottweiler sitting in frosted grass" loading="lazy" style="object-position: 46% 50%" data-source="stand-in" data-subject="Rottweiler"></div>
-          <h3>Rottweiler</h3>
-          <p>Property guarding and deterrence.</p>
-        </a>
+        <div class="span-5 stack-4">
+          <h2 id="breeds-h">The working dog breeds we deploy most</h2>
+          <ul class="rows rows--index">
+            <li><span class="rows__name">Belgian Malinois</span><p>Patrol and detection. Our most deployed dog.</p></li>
+            <li><span class="rows__name">Labrador Retriever</span><p>Narcotics, explosives and cargo screening.</p></li>
+            <li><span class="rows__name">Rottweiler</span><p>Property guarding and deterrence.</p></li>
+          </ul>
+          <p><a class="link" href="breeds.html">See all ten breeds</a></p>
+        </div>
+        <div class="frame frame--photo frame--fill span-6 start-7">
+          <img class="frame__img" src="images/action-springer-luggage.jpg" width="731" height="848" alt="A black Labrador in a yellow harness sniffing a bag" loading="lazy" data-source="client" data-subject="Labrador Retriever">
+        </div>
       </div>
     </div>
   </section>
@@ -298,7 +333,7 @@
     <div class="closing__links">
       <div class="grid">
         <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top"><img src="images/logo.svg" alt="" width="32" height="32" loading="lazy">Top Notch Canine</a>
+          <a class="nav__logo" href="#top"><img src="images/logo-light.svg" alt="" width="32" height="32" loading="lazy">Top Notch Canine</a>
           <p class="footer__lede">K9 security for East Africa</p>
         </div>
         <div class="span-2 footer__col"><h3>Services</h3><ul><li><a href="services.html#security">Detection training</a></li><li><a href="services.html#security">Trained dogs</a></li><li><a href="services.html#security">Handler training</a></li></ul></div>
@@ -309,7 +344,6 @@
       <div class="footer__legal">
         <span>&copy; 2026 Top Notch Canine Capability &nbsp; <a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a></span>
         <div class="socials"></div>
-        <a class="credits" href="https://unsplash.com/license" rel="noopener">Rottweiler photograph via Unsplash</a>
       </div>
     </div>
   </div>
