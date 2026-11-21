@@ -3,9 +3,13 @@
 // Switches for the form, analytics, proof and domain live in build/site.config.mjs.
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import CFG from './site.config.mjs';
 
 const SITE = process.argv[2] || '.';
+// Version tags so browsers fetch a fresh stylesheet and script after every change
+const ver = (f) => crypto.createHash('md5').update(fs.readFileSync(path.join(SITE, f))).digest('hex').slice(0, 8);
+const V_CSS = ver('css/tnc.css'), V_JS = ver('js/tnc.js');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // WhatsApp opens with a starter message, so the visitor only fills in the blanks
 const WA = 'https://wa.me/254721448555?text=' + encodeURIComponent('Hello Top Notch Canine, I would like a quote for a K9 team.\nSite: \nDates: \nWhat we need: ');
@@ -24,8 +28,8 @@ const icon = {
   phone: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.6 2.5 4 3.3c-.9.3-1.4 1.2-1.2 2.1 1.4 5.6 5.2 9.4 10.8 10.8.9.2 1.8-.3 2.1-1.2l.8-2.6-3.6-1.6-1.6 1.7c-2-1-3.6-2.6-4.6-4.6l1.7-1.6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
   menu: '<svg class="i-open" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="1.6"/></svg><svg class="i-close" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 4l10 10M14 4 4 14" stroke="currentColor" stroke-width="1.6"/></svg>',
   plus: '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="currentColor" stroke-width="1.8"/></svg>',
-  mail: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 4.5h15v11h-15z M2.5 5l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
-  linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>',
+  mail: '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 4.5h15v11h-15z M2.5 5l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+  linkedin: '<svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>',
   chat: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5a7.5 7.5 0 0 0-6.5 11.2L2.5 17.5l3.9-1A7.5 7.5 0 1 0 10 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
 };
 const btn = (href, text, cls = 'btn--red') => `<a class="btn ${cls}" href="${href}">${text}${icon.arrow}</a>`;
@@ -91,7 +95,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="canonical
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
-${preload ? `<link rel="preload" href="${preload}" as="image">\n` : ''}<link rel="stylesheet" href="css/tnc.css">
+${preload ? `<link rel="preload" href="${preload}" as="image">\n` : ''}<link rel="stylesheet" href="css/tnc.css?v=${V_CSS}">
 <script>document.documentElement.classList.add('js')</script>
 ${GA}${ld ? LD + '\n' : ''}</head>
 <body>
@@ -162,7 +166,7 @@ ${body.trim()}
   <a href="tel:${TEL}">${icon.phone}Call</a>
   <a href="contact.html#request">Request a K9 team</a>
 </nav>
-<script src="js/tnc.js" defer></script>
+<script src="js/tnc.js?v=${V_JS}" defer></script>
 </body>
 </html>
 `;
@@ -540,7 +544,7 @@ ${hero({
     <div class="founder__photo"><img src="images/founder.jpg" alt="Bonifance Mokua in uniform beside a shepherd dog" loading="lazy"></div>
     <div class="founder__body">
       <h2 id="founder-h">Bonifance Mokua, director and head of training</h2>
-      <p class="lede">A retired Military Police officer and certified IED and EDD trainer. He founded Top Notch Canine Capability in 2016.</p>
+      <p class="lede">A former Military Police officer and certified IED and EDD trainer. He founded Top Notch Canine Capability in 2016.</p>
       <ul class="timeline">
         <li><strong>2016 to now</strong><span>Director and head of training, Top Notch Canine Capability, Kitengela</span></li>
         <li><strong>Mogadishu</strong><span>K9 security for cargo and aircraft screening at Aden Adde International Airport and the sea port</span></li>
@@ -557,7 +561,7 @@ ${hero({
     <div class="split__photo" data-reveal><img src="images/svc-handler-training.jpg" alt="A handler running bite-work training with a young Rottweiler on a lead" loading="lazy" style="object-position:40% 50%"></div>
     <div class="split__body">
       <h2 id="team-h">Our team</h2>
-      <p class="lede">Our handlers and trainers are active and retired members of specialised police and military units across Kenya.</p>
+      <p class="lede">Our handlers and trainers are active and former members of specialised police and military units across Kenya.</p>
       <p class="measure">Handlers and dogs train together at our kennels in Kitengela and are re-certified to NASDU standards every year.</p>
     </div>
   </div>
