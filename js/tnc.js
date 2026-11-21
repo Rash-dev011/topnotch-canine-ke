@@ -99,6 +99,30 @@
     });
   });
 
+  // Header compacts once the page scrolls
+  const header = document.querySelector('.header');
+  if (header) {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { header.dataset.scrolled = String(window.scrollY > 24); ticking = false; });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Photographs develop on a diagonal wipe the first time they enter the screen
+  const reveals = document.querySelectorAll('[data-reveal]');
+  if (reveals.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    // Anything already on screen shows at once; only what is below the fold waits
+    reveals.forEach((el) => { if (el.getBoundingClientRect().top < window.innerHeight * 0.88) el.classList.add('is-in'); else io.observe(el); });
+    doc.classList.add('reveal-ready');
+  }
+
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = String(new Date().getFullYear());
 })();

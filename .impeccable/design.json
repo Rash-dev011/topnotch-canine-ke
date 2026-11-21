@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T10:32:48Z",
+  "generatedAt": "2026-11-21T11:29:26Z",
   "title": "Design System: Top Notch Canine Capability",
   "extensions": {
     "colorMeta": {
@@ -148,6 +148,38 @@
           "#e9eff8"
         ]
       },
+      "field-edge": {
+        "role": "neutral",
+        "displayName": "Field Edge",
+        "canonical": "#8b8f97",
+        "oklch": "oklch(64.9% 0.013 264.5)",
+        "tonalRamp": [
+          "#080b11",
+          "#21252c",
+          "#3e424a",
+          "#5c626a",
+          "#7d838b",
+          "#a0a5ae",
+          "#c4c9d3",
+          "#e9eff8"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "#6b7079",
+        "oklch": "oklch(54.4% 0.015 262.3)",
+        "tonalRamp": [
+          "#080b11",
+          "#21252c",
+          "#3e424a",
+          "#5c626a",
+          "#7d838b",
+          "#a0a5ae",
+          "#c4c9d3",
+          "#e9eff8"
+        ]
+      },
       "on-dark": {
         "role": "neutral",
         "displayName": "On-Dark",
@@ -200,19 +232,27 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The H1 in each hero band, sentence case."
+        "purpose": "The H1 on inner and prose pages, sentence case, 0.98 leading."
+      },
+      "display-home": {
+        "displayName": "Display home",
+        "purpose": "The home hero H1 inside the translucent ink panel."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section H2s and the closing band statement."
+        "purpose": "Section H2s, the closing band statement and the large phone number."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "H3s, service names and row names in ruled lists."
+        "purpose": "H3s, service names, row names in ruled lists, H2s in legal prose."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "The record panel statement, sentence case."
       },
       "lede": {
         "displayName": "Lede",
-        "purpose": "The paragraph under a heading, max about 40rem, muted."
+        "purpose": "The paragraph under a heading and the hero paragraph, muted."
       },
       "body": {
         "displayName": "Body",
@@ -233,6 +273,11 @@
     },
     "shadows": [
       {
+        "name": "header-lift",
+        "value": "0 10px 30px -18px rgb(17 18 20 / 0.45)",
+        "purpose": "The sticky header once the page has scrolled (data-scrolled)."
+      },
+      {
         "name": "menu-drop",
         "value": "0 24px 40px -24px rgb(17 18 20 / 0.35)",
         "purpose": "The open phone navigation panel only."
@@ -247,17 +292,37 @@
       {
         "name": "ease-out",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Easing for the hero entrance, arrow nudges, nav underline and action bar."
+        "purpose": "Easing for the hero entrance, reveal, arrow nudges, nav underline, header compaction and action bar."
+      },
+      {
+        "name": "hero-settle",
+        "value": "opacity 1600ms + img scale(1.06) to 1 over 2200ms, ease-out",
+        "purpose": "Home hero photograph fades in and settles."
+      },
+      {
+        "name": "hero-panel-wipe",
+        "value": "1000ms ease-out; clip-path from polygon(0 0, 0 0, -72px 100%, 0 100%)",
+        "purpose": "Home hero ink panel wipes in along its diagonal."
       },
       {
         "name": "hero-wipe",
         "value": "1100ms ease-out; clip-path from polygon(100% 0, 100% 0, 100% 100%, 78% 100%)",
-        "purpose": "The one entrance: the hero photograph wipes in along its diagonal (fades on phones)."
+        "purpose": "Inner hero photograph wipes in along its diagonal (fades on phones)."
       },
       {
         "name": "hero-rise",
         "value": "800ms ease-out; translateY(14px) and opacity; delays 220/300/380ms",
-        "purpose": "H1, lede and actions rise in with the wipe."
+        "purpose": "H1, paragraph and actions rise in with the entrance."
+      },
+      {
+        "name": "photo-reveal",
+        "value": "clip-path wedge 1100ms + scale(1.08) to 1 over 1600ms, ease-out; stagger 0/90/180ms",
+        "purpose": "Only the home services trio and the first split photo per page, on first entry; photos already on screen show at once."
+      },
+      {
+        "name": "header-compact",
+        "value": "300ms; min-height 104px to 76px after 24px of scroll",
+        "purpose": "Sticky header compaction and shadow."
       },
       {
         "name": "state",
@@ -271,8 +336,8 @@
       },
       {
         "name": "reduced-motion",
-        "value": "animations off, transitions 1ms",
-        "purpose": "Honoured globally under prefers-reduced-motion: reduce."
+        "value": "animations off, transitions 1ms; reveal never armed; print clears reveal state",
+        "purpose": "Honoured globally under prefers-reduced-motion: reduce and in print."
       }
     ],
     "breakpoints": [
@@ -303,6 +368,28 @@
       {
         "name": "desktop-nav",
         "value": "1024px"
+      }
+    ],
+    "materials": [
+      {
+        "name": "header-glass",
+        "value": "background rgb(255 255 255 / 0.88); backdrop-filter: saturate(1.4) blur(14px)",
+        "purpose": "Sticky header; falls back to 96% white without backdrop-filter."
+      },
+      {
+        "name": "hero-panel",
+        "value": "background rgb(17 18 20 / 0.86); backdrop-filter: blur(6px); clip-path ends on a 72px diagonal",
+        "purpose": "Home hero text plate over the full-bleed photograph."
+      },
+      {
+        "name": "band-photo-scrim",
+        "value": "linear-gradient(90deg, rgb(17 18 20 / 0.94) 0%, rgb(17 18 20 / 0.8) 38%, rgb(17 18 20 / 0.25) 64%, rgb(17 18 20 / 0.45) 100%)",
+        "purpose": "Closing band over its photograph; flat 80% ink under 1024px."
+      },
+      {
+        "name": "caption-plate",
+        "value": "rgb(17 18 20 / 0.88)",
+        "purpose": "Field photo captions, ending on a 24px slant."
       }
     ]
   },
@@ -340,12 +427,12 @@
       "css": ".ds-field { display: grid; gap: 8px; max-width: 360px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-field span { font-weight: 500; font-size: 0.9375rem; color: #111214; } .ds-input { width: 100%; min-height: 52px; padding: 12px 14px; font: 400 1rem/1.4 Jost, Futura, 'Century Gothic', sans-serif; color: #111214; caret-color: #d4001c; background: #ffffff; border: 1px solid #8b8f97; border-radius: 0; transition: border-color 160ms ease, box-shadow 160ms ease; } .ds-input::placeholder { color: #6b7079; } .ds-input:hover { border-color: #111214; } .ds-input:focus { outline: none; border-color: #111214; box-shadow: inset 0 -3px 0 #d4001c; }"
     },
     {
-      "name": "Main Navigation",
+      "name": "Header and Navigation",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Uppercase links with a red underline that draws from the left; the current page holds it in red.",
-      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Services</a><a href=\"#\">Breeds</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav>",
-      "css": ".ds-nav { display: flex; gap: 26px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-nav a { position: relative; padding-block: 6px; color: #111214; text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9375rem; font-weight: 500; } .ds-nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #d4001c; transform: scaleX(0); transform-origin: left; transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav a:hover::after, .ds-nav a[aria-current='page']::after { transform: scaleX(1); } .ds-nav a[aria-current='page'] { color: #d4001c; } .ds-nav a:focus-visible { outline: 2px solid #d4001c; outline-offset: 3px; }"
+      "description": "Sticky translucent white header; uppercase links with a red underline drawn from the left, the current page held in red. Compacts from 104px to 76px on scroll (hover stands in for scroll here).",
+      "html": "<header class=\"ds-header\"><span class=\"ds-brand\">TOP NOTCH</span><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Services</a><a href=\"#\">Breeds</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 104px; padding: 0 24px; background: rgb(255 255 255 / 0.88); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid #d6d6d1; font-family: Jost, Futura, 'Century Gothic', sans-serif; transition: min-height 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease; } .ds-header:hover { min-height: 76px; box-shadow: 0 10px 30px -18px rgb(17 18 20 / 0.45); } .ds-brand { font-weight: 600; font-size: 1.25rem; letter-spacing: 0.08em; color: #111214; } .ds-nav { display: flex; gap: 26px; } .ds-nav a { position: relative; padding-block: 6px; color: #111214; text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9375rem; font-weight: 500; } .ds-nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #d4001c; transform: scaleX(0); transform-origin: left; transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav a:hover::after, .ds-nav a[aria-current='page']::after { transform: scaleX(1); } .ds-nav a[aria-current='page'] { color: #d4001c; } .ds-nav a:focus-visible { outline: 2px solid #d4001c; outline-offset: 3px; }"
     },
     {
       "name": "Certification Badge",
@@ -369,15 +456,23 @@
       "refersTo": "credentials-strip",
       "description": "Steel shelf closing the hero band: credentials divided by graphite rules.",
       "html": "<ul class=\"ds-creds\"><li><strong>NASDU standard</strong><span>Dogs and handlers recertified yearly</span></li><li><strong>Ex-Military Police</strong><span>Head of training, IED and EDD certified</span></li><li><strong>Since 2016</strong><span>Kenya, Uganda and Tanzania</span></li></ul>",
-      "css": ".ds-creds { list-style: none; margin: 0; padding: 0 24px; display: grid; grid-template-columns: repeat(3, 1fr); background: #1c1f23; border-top: 1px solid #2c3036; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-creds li { padding: 22px 24px 22px 0; display: flex; flex-direction: column; gap: 2px; } .ds-creds li + li { padding-left: 24px; border-left: 1px solid #2c3036; } .ds-creds strong { font-weight: 500; font-size: 1.0625rem; color: #ffffff; } .ds-creds span { font-size: 0.9375rem; color: #b9bcc2; }"
+      "css": ".ds-creds { list-style: none; margin: 0; padding: 0 24px; display: grid; grid-template-columns: repeat(3, 1fr); background: #1c1f23; border-top: 1px solid #2c3036; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-creds li { padding: 22px 24px 22px 0; display: flex; flex-direction: column; gap: 2px; } .ds-creds li + li { padding-left: 24px; border-left: 1px solid #2c3036; } .ds-creds strong { font-weight: 500; font-size: 1.1875rem; letter-spacing: -0.005em; color: #ffffff; } .ds-creds span { font-size: 0.9375rem; color: #b9bcc2; }"
     },
     {
-      "name": "Hero Band",
+      "name": "Hero Band (home)",
       "kind": "custom",
-      "refersTo": "band",
-      "description": "Ink band with the field photograph cut on a hard diagonal and a red slanted action; the photo wipes in once. The grey gradient stands in for the photograph.",
+      "refersTo": "hero-panel",
+      "description": "Full-bleed photograph under a translucent ink panel cut on a 72px diagonal; the photo settles and the panel wipes in once. The grey gradient stands in for the licensed photograph.",
       "html": "<section class=\"ds-hero\"><div class=\"ds-hero-media\"></div><div class=\"ds-hero-panel\"><h1>Trained security dogs and handlers for East Africa</h1><p>Narcotics and explosives detection, patrol dogs and handler courses.</p><a class=\"ds-hero-btn\" href=\"#\">Request a K9 team<svg viewBox=\"0 0 14 14\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M1 7h11M7.5 2.5 12 7l-4.5 4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></a></div></section>",
-      "css": ".ds-hero { position: relative; isolation: isolate; overflow: hidden; background: #111214; color: #f4f4f1; min-height: 360px; display: flex; align-items: center; padding: 48px 32px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-hero-media { position: absolute; inset: 0 0 0 auto; width: 64%; z-index: -1; background: linear-gradient(135deg, #2c3036, #555a62); clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%); animation: ds-wipe 1100ms cubic-bezier(0.16, 1, 0.3, 1) both; } .ds-hero-panel { max-width: 46%; } .ds-hero h1 { margin: 0; color: #ffffff; font-weight: 500; font-size: 2.375rem; line-height: 1.08; letter-spacing: -0.015em; } .ds-hero p { margin: 18px 0 28px; color: #b9bcc2; font-size: 1.125rem; line-height: 1.5; } .ds-hero-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 42px 14px 24px; background: #d4001c; color: #ffffff; font-weight: 500; text-decoration: none; clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%); transition: background-color 180ms ease; } .ds-hero-btn:hover { background: #a80016; } .ds-hero-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; } @keyframes ds-wipe { from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 78% 100%); } } @media (prefers-reduced-motion: reduce) { .ds-hero-media { animation: none; } }"
+      "css": ".ds-hero { position: relative; isolation: isolate; overflow: hidden; background: #111214; color: #f4f4f1; min-height: 420px; display: flex; align-items: center; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-hero-media { position: absolute; inset: 0; z-index: -2; background: linear-gradient(135deg, #5d6268, #a0a5ad 55%, #3e4249); animation: ds-settle 1600ms cubic-bezier(0.16, 1, 0.3, 1) both; } .ds-hero-panel { position: relative; max-width: 560px; padding: 40px 72px 40px 32px; } .ds-hero-panel::before { content: ''; position: absolute; inset: 0; z-index: -1; background: rgb(17 18 20 / 0.86); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); clip-path: polygon(0 0, 100% 0, calc(100% - 72px) 100%, 0 100%); animation: ds-wipe-panel 1000ms cubic-bezier(0.16, 1, 0.3, 1) both; } .ds-hero h1 { margin: 0; color: #ffffff; font-weight: 500; font-size: 2.75rem; line-height: 0.98; letter-spacing: -0.03em; } .ds-hero p { margin: 22px 0 34px; color: #b9bcc2; font-size: 1.25rem; line-height: 1.5; } .ds-hero-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 42px 14px 24px; background: #d4001c; color: #ffffff; font-weight: 500; text-decoration: none; clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%); transition: background-color 180ms ease; } .ds-hero-btn:hover { background: #a80016; } .ds-hero-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; } @keyframes ds-settle { from { opacity: 0; } } @keyframes ds-wipe-panel { from { clip-path: polygon(0 0, 0 0, -72px 100%, 0 100%); } } @media (prefers-reduced-motion: reduce) { .ds-hero-media, .ds-hero-panel::before { animation: none; } }"
+    },
+    {
+      "name": "Closing Band over Photo",
+      "kind": "custom",
+      "refersTo": "band-photo",
+      "description": "Ink band over its own photograph with a left-weighted ink gradient; statement and large phone number on the left. The grey gradient stands in for the photograph.",
+      "html": "<section class=\"ds-band\"><div class=\"ds-band-bg\"></div><div class=\"ds-band-body\"><h2>Put a trained team on your site</h2><a class=\"ds-band-tel\" href=\"#\">+254 721 448 555</a></div></section>",
+      "css": ".ds-band { position: relative; isolation: isolate; overflow: hidden; background: #111214; color: #f4f4f1; padding: 104px 32px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-band-bg { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(17 18 20 / 0.94) 0%, rgb(17 18 20 / 0.8) 38%, rgb(17 18 20 / 0.25) 64%, rgb(17 18 20 / 0.45) 100%), linear-gradient(135deg, #3e4249, #7e838a); } .ds-band-body { max-width: 36rem; } .ds-band h2 { margin: 0; color: #ffffff; font-weight: 500; font-size: 2.125rem; line-height: 1.04; letter-spacing: -0.025em; } .ds-band-tel { display: inline-block; margin-top: 28px; padding-top: 28px; border-top: 1px solid rgb(255 255 255 / 0.2); color: #ffffff; text-decoration: none; font-size: 2.125rem; font-weight: 400; letter-spacing: -0.01em; transition: color 160ms ease; } .ds-band-tel:hover { color: #fe0022; } .ds-band-tel:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }"
     },
     {
       "name": "Split Footer",
@@ -390,14 +485,15 @@
   ],
   "narrative": {
     "northStar": "The Screening Line",
-    "overview": "The site reads like the inside of a well-run screening hall: white light, black ink, ruled lanes, and one red that means \"act here\". It is the category standard for a defence-grade security provider, plain corporate authority at the level of SafeLane Global, carried by real field photographs of dogs working aircraft cabins, bus racks and luggage rows. Nothing is dressed up as tactical; the credentials do the work.\n\nDensity is calm and institutional. Sections breathe on a large vertical rhythm, content sits in ruled lists and two-column grids rather than floating cards, and the eye is led by weight bands: a white page punctuated by full-width ink and steel bands, with a warm stone band for secondary groupings. The one piece of geometry the system owns is the hard diagonal cut. It slices the hero photograph, ends every primary button on a slant, trims photo panels and splits the footer into red and black.\n\nThe system refuses tactical-costume styling: stencil type, camouflage, glowing edges, monospaced \"classified\" labels. It also refuses invented proof; the visual language stays factual so the record can speak.",
+    "overview": "The site reads like the inside of a well-run screening hall: white light, black ink, ruled lanes, and one red that means \"act here\". It is the category standard for a defence-grade security provider, plain corporate authority at the level of SafeLane Global. Atmosphere comes from large licensed photographs of working dogs; proof comes from the client's own field photographs of dogs working aircraft cabins, bus racks and luggage rows, shown close to their native size. Nothing is dressed up as tactical; the credentials do the work.\n\nDensity is calm and institutional. Sections breathe on a large vertical rhythm, content sits in ruled lists and two-column grids rather than floating cards, and the eye is led by weight bands: a white page punctuated by full-width ink and steel bands, with a warm stone band for secondary groupings. The home page opens on a full-bleed photograph under a translucent ink panel, and every page closes on an ink band laid over its own photograph. The one piece of geometry the system owns is the hard diagonal cut. It slices the hero panel and photographs, ends every primary button on a slant, trims photo panels, drives the photo reveal and splits the footer into red and black.\n\nThe system refuses tactical-costume styling: stencil type, camouflage, glowing edges, monospaced \"classified\" labels. It also refuses invented proof; stock imagery is atmosphere only and is never presented as the client's teams, so the record can speak.",
     "keyCharacteristics": [
       "White ground, ink type, one red for action.",
-      "Jost 500 in sentence case for every heading; uppercase is reserved for small navigational labels.",
+      "Jost 500 in sentence case for every heading, set large and tight; uppercase is reserved for small navigational labels.",
       "Square corners everywhere; the only non-rectangular shape is the diagonal cut.",
       "Ruled lists with a 2px ink top rule and 1px dividers stand in for cards.",
       "Full-width ink and steel bands carry weight; stone carries grouping.",
-      "One entrance moment: the hero photo wipes in along its diagonal; everything else is still."
+      "Licensed stock for atmosphere, client photographs for proof.",
+      "One authored hero entrance and one narrow diagonal photo reveal; everything else is still."
     ],
     "rules": [
       {
@@ -417,7 +513,7 @@
       },
       {
         "name": "The Sentence Case Rule",
-        "body": "Every heading, button and statement is set in sentence case at weight 500. Uppercase is reserved for short navigational and tabular labels of a few words; it is never used for headings or paragraphs.",
+        "body": "Every heading, button and statement is set in sentence case at weight 500. Uppercase is reserved for short navigational and tabular labels of a few words; it is never used for headings, statements or paragraphs.",
         "section": "typography"
       },
       {
@@ -426,32 +522,45 @@
         "section": "typography"
       },
       {
+        "name": "The Words Not Gauges Rule",
+        "body": "Ratings such as a breed's drive are written as words in Ink (\"High\", \"Extreme\", \"Medium to high\"), never as bars, dots or meters.",
+        "section": "typography"
+      },
+      {
         "name": "The Flat Ground Rule",
-        "body": "Surfaces, buttons, lists and photos never cast shadows. If something needs to feel raised, put it on a different band.",
+        "body": "Surfaces, buttons, lists and photos never cast shadows. If something needs to feel raised, put it on a different band. Only floating chrome (the sticky header and the phone menu) may cast a soft shadow, and never a hard offset one.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Readable Photo Rule",
+        "body": "Text never sits directly on a photograph; it sits on ink, either solid or as a translucent plate or gradient of at least 80% where the text is.",
         "section": "elevation"
       },
       {
         "name": "The Cut Rule",
-        "body": "Steep cuts (hero photo, button ends, footer split, caption ends) always lean right as they rise; shallow cuts across a photo's top or foot may face either way to point toward the adjacent text. Every cut is a hard edge. No curves, no rounded corners, no chamfers on all four corners.",
+        "body": "Steep cuts (hero panel and photo, button ends, footer split, caption ends, the reveal wedge) always lean right as they rise; shallow cuts across a photo's top or foot may face either way to point toward the adjacent text. Every cut is a hard edge. No curves, no rounded corners, no chamfers on all four corners.",
         "section": "shapes"
       }
     ],
     "dos": [
       "Do use Signal Red (#d4001c) for every filled control and Logo Red (#fe0022) only for large marks on ink.",
-      "Do set every heading in Jost 500, sentence case, with slight negative tracking (-0.015em on display and headline).",
+      "Do set every heading in Jost 500, sentence case, with tight leading and negative tracking (0.98 and -0.03em on H1, 1.04 and -0.025em on H2).",
       "Do end primary buttons on an 18px slant and keep all corners square.",
       "Do group content as ruled lists with a 2px Ink top rule and 1px dividers.",
       "Do give weight with full-width ink, steel or stone bands.",
-      "Do use real operational photographs of the dogs, cut on hard diagonals.",
-      "Do keep motion to the one hero wipe and short 160ms to 240ms state transitions, and honour reduced motion."
+      "Do use the client's own photographs as proof, near their native size, and licensed stock only for atmosphere, credited in the footer.",
+      "Do put text over photographs only on ink plates or gradients of at least 80%.",
+      "Do keep motion to the one hero entrance, the rationed photo reveal and short 160ms to 300ms state transitions, and honour reduced motion and print."
     ],
     "donts": [
       "Don't use stencil type, camouflage, glowing edges or monospaced labels.",
       "Don't add rounded corners, pill buttons or shadows on buttons, photos or panels.",
       "Don't put content in cards with backgrounds and shadows; use rules.",
       "Don't use red as a background band, section tint or decoration outside the footer split.",
-      "Don't set headings or paragraphs in uppercase.",
-      "Don't add scroll-triggered reveals or a second entrance animation.",
+      "Don't set headings, statements or paragraphs in uppercase.",
+      "Don't caption or present stock photographs as the client's dogs, handlers or sites.",
+      "Don't extend the photo reveal beyond the home services trio and the first split photograph per page, and don't add a second entrance animation.",
+      "Don't show ratings as bars, dots or meters; write them as words.",
       "Don't introduce a second typeface."
     ]
   }
