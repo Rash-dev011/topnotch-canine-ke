@@ -11,6 +11,7 @@
     if (!toggle || !nav) return;
     toggle.setAttribute('aria-expanded', String(open));
     toggle.querySelector('.nav__toggle-label').textContent = open ? 'Close' : 'Menu';
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     if (mq.matches) nav.hidden = !open;
   };
   const sync = () => { if (!nav) return; nav.hidden = mq.matches; if (toggle) setOpen(false); };
