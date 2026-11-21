@@ -88,6 +88,8 @@
       try {
         const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
         if (!res.ok) throw new Error(String(res.status));
+        if (window.gtag) gtag('event', 'generate_lead', { form: 'k9_request', service: form.elements.service?.value || '' });
+        if (form.dataset.thanks) { window.location.href = form.dataset.thanks; return; }
         form.reset();
         status.dataset.state = 'ok';
         status.textContent = form.dataset.sent || 'Your request is in. We will be in touch.';
@@ -123,6 +125,15 @@
     reveals.forEach((el) => { if (el.getBoundingClientRect().top < window.innerHeight * 0.88) el.classList.add('is-in'); else io.observe(el); });
     doc.classList.add('reveal-ready');
   }
+
+  // Lead tracking: counts Call, WhatsApp and Email taps when Google Analytics is switched on
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || !window.gtag) return;
+    const h = a.getAttribute('href');
+    const kind = h.startsWith('tel:') ? 'call' : h.includes('wa.me/') ? 'whatsapp' : h.startsWith('mailto:') ? 'email' : '';
+    if (kind) gtag('event', 'contact_click', { method: kind, page: location.pathname });
+  });
 
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = String(new Date().getFullYear());
