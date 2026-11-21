@@ -17,6 +17,7 @@ const ORIGIN = 'https://topnotchk9capability.co.ke';
 const TEL = '+254721448555';
 const TEL_TXT = '+254 721 448 555';
 const EMAIL = 'clientservice@topnotchk9capability.co.ke';
+const LINKEDIN = 'https://www.linkedin.com/in/bonifance-mokua-00540459';
 
 const icon = {
   arrow: '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h11M7.5 2.5 12 7l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
@@ -51,6 +52,7 @@ const LD = `<script type="application/ld+json">
   "openingHours": "Mo-Su 06:00-20:00",
   "sameAs": ["https://wa.me/254721448555"],
   "foundingDate": "2016",
+  "founder": { "@type": "Person", "name": "Bonifance Mokua", "jobTitle": "Director and head of training", "sameAs": ["${LINKEDIN}"] },
   "areaServed": ["Kenya", "Uganda", "Tanzania"]
 }
 </script>`;
@@ -543,7 +545,7 @@ ${hero({
         <li><strong>UNMAS, Somalia</strong><span>IED and EDD specialist, leading six trainers for the Somali Police Force</span></li>
         <li><strong>Kenya Defence Forces</strong><span>Military Police K9 unit</span></li>
       </ul>
-      <div class="actions" style="margin-top:28px"><a class="link" href="mailto:mokua@topnotchk9capability.co.ke">Email Bonifance</a></div>
+      <div class="actions" style="margin-top:28px"><a class="link" href="mailto:mokua@topnotchk9capability.co.ke">Email Bonifance</a><a class="link" href="${LINKEDIN}" rel="noopener">His LinkedIn profile</a></div>
     </div>
   </div>
 </section>
