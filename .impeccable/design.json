@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T10:32:48Z",
+  "title": "Design System: Top Notch Canine Capability",
+  "extensions": {
+    "colorMeta": {
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "#d4001c",
+        "oklch": "oklch(54.8% 0.223 26.1)",
+        "tonalRamp": [
+          "#1f0001",
+          "#4d0004",
+          "#80010d",
+          "#b80217",
+          "#e13f3c",
+          "#f67b71",
+          "#ffaea5",
+          "#ffe0d9"
+        ]
+      },
+      "signal-red-deep": {
+        "role": "primary",
+        "displayName": "Signal Red Deep",
+        "canonical": "#a80016",
+        "oklch": "oklch(46.1% 0.187 25.7)",
+        "tonalRamp": [
+          "#1c0202",
+          "#470b0c",
+          "#781a1a",
+          "#ac292a",
+          "#d4504b",
+          "#eb837b",
+          "#ffb3ab",
+          "#ffe2dd"
+        ]
+      },
+      "logo-red": {
+        "role": "primary",
+        "displayName": "Logo Red",
+        "canonical": "#fe0022",
+        "oklch": "oklch(62.7% 0.255 26.4)",
+        "tonalRamp": [
+          "#210000",
+          "#520000",
+          "#880000",
+          "#c20000",
+          "#ec262c",
+          "#ff7268",
+          "#ffa99f",
+          "#ffddd6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#111214",
+        "oklch": "oklch(18.2% 0.004 264.5)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#242527",
+          "#414244",
+          "#606164",
+          "#818285",
+          "#a4a5a8",
+          "#c8c9cc",
+          "#edeef1"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Steel",
+        "canonical": "#1c1f23",
+        "oklch": "oklch(23.8% 0.009 255.6)",
+        "tonalRamp": [
+          "#090b0f",
+          "#222529",
+          "#3f4247",
+          "#5e6266",
+          "#7f8388",
+          "#a1a5ab",
+          "#c5c9cf",
+          "#ebeff5"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#2c3036",
+        "oklch": "oklch(30.8% 0.012 258.4)",
+        "tonalRamp": [
+          "#080b10",
+          "#21252b",
+          "#3e4249",
+          "#5d6268",
+          "#7e838a",
+          "#a0a5ad",
+          "#c4c9d1",
+          "#eaeff7"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Stone",
+        "canonical": "#f2f2ef",
+        "oklch": "oklch(96.0% 0.004 106.5)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#252523",
+          "#424240",
+          "#61615f",
+          "#828280",
+          "#a5a5a2",
+          "#c9c9c6",
+          "#efefec"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#d6d6d1",
+        "oklch": "oklch(87.5% 0.007 106.5)",
+        "tonalRamp": [
+          "#0b0b08",
+          "#252522",
+          "#42423e",
+          "#61615d",
+          "#83837e",
+          "#a5a5a1",
+          "#c9c9c4",
+          "#efefea"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#555a62",
+        "oklch": "oklch(46.6% 0.014 259.8)",
+        "tonalRamp": [
+          "#080b11",
+          "#21252c",
+          "#3e424a",
+          "#5c626a",
+          "#7d838b",
+          "#a0a5ae",
+          "#c4c9d3",
+          "#e9eff8"
+        ]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "On-Dark",
+        "canonical": "#f4f4f1",
+        "oklch": "oklch(96.6% 0.004 106.5)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#252523",
+          "#424240",
+          "#61615f",
+          "#828280",
+          "#a5a5a2",
+          "#c9c9c6",
+          "#efefec"
+        ]
+      },
+      "on-dark-muted": {
+        "role": "neutral",
+        "displayName": "On-Dark Muted",
+        "canonical": "#b9bcc2",
+        "oklch": "oklch(79.5% 0.009 264.5)",
+        "tonalRamp": [
+          "#090b0f",
+          "#23252a",
+          "#404247",
+          "#5f6167",
+          "#808288",
+          "#a2a5ab",
+          "#c6c9cf",
+          "#ebeef5"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The H1 in each hero band, sentence case."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section H2s and the closing band statement."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "H3s, service names and row names in ruled lists."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The paragraph under a heading, max about 40rem, muted."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; 68ch measure, 72ch for legal prose."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase navigation, 'more' links, table and contact labels, badges. Never headings."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Captions, badges, legal line and error messages."
+      },
+      "step-numeral": {
+        "displayName": "Step numeral",
+        "purpose": "Numbered deployment steps on ink, in Logo Red."
+      }
+    },
+    "shadows": [
+      {
+        "name": "menu-drop",
+        "value": "0 24px 40px -24px rgb(17 18 20 / 0.35)",
+        "purpose": "The open phone navigation panel only."
+      },
+      {
+        "name": "focus-bar",
+        "value": "inset 0 -3px 0 #d4001c",
+        "purpose": "Input focus and error bar along the bottom edge; a state marker, not elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Easing for the hero entrance, arrow nudges, nav underline and action bar."
+      },
+      {
+        "name": "hero-wipe",
+        "value": "1100ms ease-out; clip-path from polygon(100% 0, 100% 0, 100% 100%, 78% 100%)",
+        "purpose": "The one entrance: the hero photograph wipes in along its diagonal (fades on phones)."
+      },
+      {
+        "name": "hero-rise",
+        "value": "800ms ease-out; translateY(14px) and opacity; delays 220/300/380ms",
+        "purpose": "H1, lede and actions rise in with the wipe."
+      },
+      {
+        "name": "state",
+        "value": "160ms to 240ms",
+        "purpose": "Hover and focus transitions on buttons, links, inputs, nav underline and FAQ toggle."
+      },
+      {
+        "name": "photo-zoom",
+        "value": "700ms ease-out; scale(1.035)",
+        "purpose": "Service photo on hover of its linked item."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animations off, transitions 1ms",
+        "purpose": "Honoured globally under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "420px"
+      },
+      {
+        "name": "steps-single",
+        "value": "560px"
+      },
+      {
+        "name": "form-single",
+        "value": "600px"
+      },
+      {
+        "name": "actionbar",
+        "value": "768px"
+      },
+      {
+        "name": "stack-head",
+        "value": "800px"
+      },
+      {
+        "name": "collapse",
+        "value": "900px"
+      },
+      {
+        "name": "desktop-nav",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Signal Red fill with a slanted end; the one action on every page, 'Request a K9 team'.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Request a K9 team<svg viewBox=\"0 0 14 14\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M1 7h11M7.5 2.5 12 7l-4.5 4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 42px 14px 24px; font: 500 1.0625rem/1 Jost, Futura, 'Century Gothic', sans-serif; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; background: #d4001c; color: #ffffff; clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%); transition: background-color 180ms ease, color 180ms ease; } .ds-btn-primary svg { transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #a80016; } .ds-btn-primary:active { background: #a80016; } .ds-btn-primary:hover svg { transform: translateX(4px); } .ds-btn-primary:focus-visible { outline: 2px solid #d4001c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "The same slanted shape in ink, for a strong action on light ground that should not compete with red.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">Call the kennels<svg viewBox=\"0 0 14 14\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M1 7h11M7.5 2.5 12 7l-4.5 4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 42px 14px 24px; font: 500 1.0625rem/1 Jost, Futura, 'Century Gothic', sans-serif; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; background: #111214; color: #ffffff; clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%); transition: background-color 180ms ease, color 180ms ease; } .ds-btn-ink svg { transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ink:hover { background: #2c3036; } .ds-btn-ink:active { background: #2c3036; } .ds-btn-ink:hover svg { transform: translateX(4px); } .ds-btn-ink:focus-visible { outline: 2px solid #d4001c; outline-offset: 3px; }"
+    },
+    {
+      "name": "White Button",
+      "kind": "button",
+      "refersTo": "button-white",
+      "description": "The slanted shape in white, for actions on ink bands.",
+      "html": "<div class=\"ds-on-ink\"><a class=\"ds-btn-white\" href=\"#\">See the services<svg viewBox=\"0 0 14 14\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M1 7h11M7.5 2.5 12 7l-4.5 4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></a></div>",
+      "css": ".ds-on-ink { background: #111214; padding: 24px; } .ds-btn-white { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 42px 14px 24px; font: 500 1.0625rem/1 Jost, Futura, 'Century Gothic', sans-serif; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; background: #ffffff; color: #111214; clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%); transition: background-color 180ms ease, color 180ms ease; } .ds-btn-white svg { transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-white:hover { background: #f2f2ef; } .ds-btn-white:active { background: #f2f2ef; } .ds-btn-white:hover svg { transform: translateX(4px); } .ds-btn-white:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Square white field; focus draws a red bar along the bottom edge.",
+      "html": "<label class=\"ds-field\"><span>Site or organisation</span><input class=\"ds-input\" placeholder=\"e.g. Mombasa port terminal\"></label>",
+      "css": ".ds-field { display: grid; gap: 8px; max-width: 360px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-field span { font-weight: 500; font-size: 0.9375rem; color: #111214; } .ds-input { width: 100%; min-height: 52px; padding: 12px 14px; font: 400 1rem/1.4 Jost, Futura, 'Century Gothic', sans-serif; color: #111214; caret-color: #d4001c; background: #ffffff; border: 1px solid #8b8f97; border-radius: 0; transition: border-color 160ms ease, box-shadow 160ms ease; } .ds-input::placeholder { color: #6b7079; } .ds-input:hover { border-color: #111214; } .ds-input:focus { outline: none; border-color: #111214; box-shadow: inset 0 -3px 0 #d4001c; }"
+    },
+    {
+      "name": "Main Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Uppercase links with a red underline that draws from the left; the current page holds it in red.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Services</a><a href=\"#\">Breeds</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 26px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-nav a { position: relative; padding-block: 6px; color: #111214; text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9375rem; font-weight: 500; } .ds-nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #d4001c; transform: scaleX(0); transform-origin: left; transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav a:hover::after, .ds-nav a[aria-current='page']::after { transform: scaleX(1); } .ds-nav a[aria-current='page'] { color: #d4001c; } .ds-nav a:focus-visible { outline: 2px solid #d4001c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Certification Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Square ink-bordered tag for certifications and memberships.",
+      "html": "<ul class=\"ds-badges\"><li>NASDU</li><li>PROSAK</li><li>EAKC</li></ul>",
+      "css": ".ds-badges { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-badges li { border: 1px solid #111214; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #111214; }"
+    },
+    {
+      "name": "Ruled Rows",
+      "kind": "card",
+      "refersTo": "rows",
+      "description": "The system's replacement for cards: a 2px ink top rule and 1px dividers, name, description and meta per line.",
+      "html": "<ul class=\"ds-rows\"><li><span class=\"ds-rows-name\">Detection dog training</span><p>Narcotics and explosives, to NASDU standards.</p><span class=\"ds-rows-meta\">Yearly recertification</span></li><li><span class=\"ds-rows-name\">Dog handler training</span><p>Obedience, search procedure and handler safety.</p><span class=\"ds-rows-meta\">New and refresher</span></li></ul>",
+      "css": ".ds-rows { list-style: none; margin: 0; padding: 0; border-top: 2px solid #111214; font-family: Jost, Futura, 'Century Gothic', sans-serif; color: #111214; } .ds-rows li { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr) auto; gap: 16px 40px; align-items: baseline; padding: 24px 0; border-bottom: 1px solid #d6d6d1; } .ds-rows-name { font-size: 1.5rem; font-weight: 500; line-height: 1.2; } .ds-rows p { margin: 0; color: #555a62; } .ds-rows-meta { font-size: 0.9375rem; color: #555a62; white-space: nowrap; }"
+    },
+    {
+      "name": "Credentials Strip",
+      "kind": "custom",
+      "refersTo": "credentials-strip",
+      "description": "Steel shelf closing the hero band: credentials divided by graphite rules.",
+      "html": "<ul class=\"ds-creds\"><li><strong>NASDU standard</strong><span>Dogs and handlers recertified yearly</span></li><li><strong>Ex-Military Police</strong><span>Head of training, IED and EDD certified</span></li><li><strong>Since 2016</strong><span>Kenya, Uganda and Tanzania</span></li></ul>",
+      "css": ".ds-creds { list-style: none; margin: 0; padding: 0 24px; display: grid; grid-template-columns: repeat(3, 1fr); background: #1c1f23; border-top: 1px solid #2c3036; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-creds li { padding: 22px 24px 22px 0; display: flex; flex-direction: column; gap: 2px; } .ds-creds li + li { padding-left: 24px; border-left: 1px solid #2c3036; } .ds-creds strong { font-weight: 500; font-size: 1.0625rem; color: #ffffff; } .ds-creds span { font-size: 0.9375rem; color: #b9bcc2; }"
+    },
+    {
+      "name": "Hero Band",
+      "kind": "custom",
+      "refersTo": "band",
+      "description": "Ink band with the field photograph cut on a hard diagonal and a red slanted action; the photo wipes in once. The grey gradient stands in for the photograph.",
+      "html": "<section class=\"ds-hero\"><div class=\"ds-hero-media\"></div><div class=\"ds-hero-panel\"><h1>Trained security dogs and handlers for East Africa</h1><p>Narcotics and explosives detection, patrol dogs and handler courses.</p><a class=\"ds-hero-btn\" href=\"#\">Request a K9 team<svg viewBox=\"0 0 14 14\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M1 7h11M7.5 2.5 12 7l-4.5 4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></a></div></section>",
+      "css": ".ds-hero { position: relative; isolation: isolate; overflow: hidden; background: #111214; color: #f4f4f1; min-height: 360px; display: flex; align-items: center; padding: 48px 32px; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-hero-media { position: absolute; inset: 0 0 0 auto; width: 64%; z-index: -1; background: linear-gradient(135deg, #2c3036, #555a62); clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%); animation: ds-wipe 1100ms cubic-bezier(0.16, 1, 0.3, 1) both; } .ds-hero-panel { max-width: 46%; } .ds-hero h1 { margin: 0; color: #ffffff; font-weight: 500; font-size: 2.375rem; line-height: 1.08; letter-spacing: -0.015em; } .ds-hero p { margin: 18px 0 28px; color: #b9bcc2; font-size: 1.125rem; line-height: 1.5; } .ds-hero-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 14px 42px 14px 24px; background: #d4001c; color: #ffffff; font-weight: 500; text-decoration: none; clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%); transition: background-color 180ms ease; } .ds-hero-btn:hover { background: #a80016; } .ds-hero-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; } @keyframes ds-wipe { from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 78% 100%); } } @media (prefers-reduced-motion: reduce) { .ds-hero-media { animation: none; } }"
+    },
+    {
+      "name": "Split Footer",
+      "kind": "custom",
+      "refersTo": "footer",
+      "description": "Ink footer with a Signal Red field split off on a diagonal.",
+      "html": "<footer class=\"ds-footer\"><div><h2>Services</h2><a href=\"#\">Detection training</a><a href=\"#\">Trained dogs</a></div><div class=\"ds-footer-brand\"><a href=\"#\">+254 721 448 555</a><span>Balozi Road, Kitengela</span></div></footer>",
+      "css": ".ds-footer { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 2fr 1fr; gap: 32px; padding: 48px 32px; background: #111214; color: #ffffff; font-family: Jost, Futura, 'Century Gothic', sans-serif; } .ds-footer::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #d4001c; clip-path: polygon(0 0, 72% 0, 58% 100%, 0 100%); } .ds-footer h2 { margin: 0 0 14px; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(255 255 255 / 0.82); } .ds-footer a { display: block; margin-top: 10px; color: #ffffff; text-decoration: none; } .ds-footer a:hover { text-decoration: underline; text-underline-offset: 0.25em; } .ds-footer a:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; } .ds-footer-brand { text-align: right; } .ds-footer-brand a { font-size: 1.375rem; font-weight: 500; } .ds-footer-brand span { color: #b9bcc2; font-size: 0.9375rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Screening Line",
+    "overview": "The site reads like the inside of a well-run screening hall: white light, black ink, ruled lanes, and one red that means \"act here\". It is the category standard for a defence-grade security provider, plain corporate authority at the level of SafeLane Global, carried by real field photographs of dogs working aircraft cabins, bus racks and luggage rows. Nothing is dressed up as tactical; the credentials do the work.\n\nDensity is calm and institutional. Sections breathe on a large vertical rhythm, content sits in ruled lists and two-column grids rather than floating cards, and the eye is led by weight bands: a white page punctuated by full-width ink and steel bands, with a warm stone band for secondary groupings. The one piece of geometry the system owns is the hard diagonal cut. It slices the hero photograph, ends every primary button on a slant, trims photo panels and splits the footer into red and black.\n\nThe system refuses tactical-costume styling: stencil type, camouflage, glowing edges, monospaced \"classified\" labels. It also refuses invented proof; the visual language stays factual so the record can speak.",
+    "keyCharacteristics": [
+      "White ground, ink type, one red for action.",
+      "Jost 500 in sentence case for every heading; uppercase is reserved for small navigational labels.",
+      "Square corners everywhere; the only non-rectangular shape is the diagonal cut.",
+      "Ruled lists with a 2px ink top rule and 1px dividers stand in for cards.",
+      "Full-width ink and steel bands carry weight; stone carries grouping.",
+      "One entrance moment: the hero photo wipes in along its diagonal; everything else is still."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Rule",
+        "body": "Red appears only where the visitor can act or where the brand signs its name. It is never a background band, never a section tint, never decoration. The footer's red half is the one exception, because it is the brand mark at page scale.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Reds Rule",
+        "body": "Filled controls and small red text use Signal Red; the brighter Logo Red is for large marks on dark ground only. If the red element is smaller than 24px or carries white text, it is Signal Red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Band Rule",
+        "body": "Weight comes from full-width bands (ink, steel, stone), never from tinted boxes inside the content column.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Every heading, button and statement is set in sentence case at weight 500. Uppercase is reserved for short navigational and tabular labels of a few words; it is never used for headings or paragraphs.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Jost only. No second display face, no monospace, no stencil.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Ground Rule",
+        "body": "Surfaces, buttons, lists and photos never cast shadows. If something needs to feel raised, put it on a different band.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Cut Rule",
+        "body": "Steep cuts (hero photo, button ends, footer split, caption ends) always lean right as they rise; shallow cuts across a photo's top or foot may face either way to point toward the adjacent text. Every cut is a hard edge. No curves, no rounded corners, no chamfers on all four corners.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do use Signal Red (#d4001c) for every filled control and Logo Red (#fe0022) only for large marks on ink.",
+      "Do set every heading in Jost 500, sentence case, with slight negative tracking (-0.015em on display and headline).",
+      "Do end primary buttons on an 18px slant and keep all corners square.",
+      "Do group content as ruled lists with a 2px Ink top rule and 1px dividers.",
+      "Do give weight with full-width ink, steel or stone bands.",
+      "Do use real operational photographs of the dogs, cut on hard diagonals.",
+      "Do keep motion to the one hero wipe and short 160ms to 240ms state transitions, and honour reduced motion."
+    ],
+    "donts": [
+      "Don't use stencil type, camouflage, glowing edges or monospaced labels.",
+      "Don't add rounded corners, pill buttons or shadows on buttons, photos or panels.",
+      "Don't put content in cards with backgrounds and shadows; use rules.",
+      "Don't use red as a background band, section tint or decoration outside the footer split.",
+      "Don't set headings or paragraphs in uppercase.",
+      "Don't add scroll-triggered reveals or a second entrance animation.",
+      "Don't introduce a second typeface."
+    ]
+  }
+}
