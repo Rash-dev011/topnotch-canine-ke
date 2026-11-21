@@ -1,0 +1,120 @@
+/* Top Notch Canine: the site's own layer over the taste-skill system (system.css and its kin).
+   The palette is the client's own colours (start.mjs brand): logo red on a pale stone ground. */
+:root {
+  --p-bg: #f4f3f0; --p-surface: #e9e7e2; --p-ink: #141414; --p-muted: #5e5b57;
+  --p-accent: #c8001e; --p-accent-ink: #f4f3f0; --p-action: #c8001e; --p-action-ink: #f4f3f0;
+  --p-inv-bg: #141414; --p-inv-surface: #202020; --p-inv-ink: #f4f3f0; --p-inv-muted: #969593;
+  --p-inv-accent: #c8001e; --p-inv-accent-ink: #f4f3f0; --p-inv-action: #c8001e; --p-inv-action-ink: #f4f3f0;
+  --font-display: "Red Hat Display", system-ui, sans-serif;
+  --font-text: "Red Hat Text", system-ui, sans-serif;
+  --font-mono: "Red Hat Mono", ui-monospace, Menlo, Consolas, monospace;
+  /* a firmer, tighter headline than the default 400: the disciplined voice of a defence or
+     professional-services firm (references: Wolverine Worldwide, General Cherry) */
+  --display-weight: 500;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+}
+
+/* labels in the family's mono, upper case and tracked: the spec-sheet voice of a defence firm
+   (reference: General Cherry's mono labels and spec rows) */
+.t-label, .hero__facts dt, .ly-float__row, .person__role, .footer__col h3 {
+  font-family: var(--font-mono); font-size: var(--t-label); font-weight: 400;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+
+/* one grade over every photograph, so the client's own pictures from different days and cameras
+   read as one set: a little less colour, a little more contrast */
+:is(.frame__img, .hero__media > img, .tile__media img) { filter: saturate(.85) contrast(1.05); }
+
+/* numbered rows: a service list read like a spec sheet, its number in the accent */
+.rows--index { counter-reset: row; }
+.rows--index > li { grid-template-columns: 48px minmax(0, 1fr); }
+.rows--index > li::before {
+  counter-increment: row; content: counter(row, decimal-leading-zero); grid-row: 1 / span 2;
+  font: 500 var(--t-label)/1.6 var(--font-mono); letter-spacing: .06em; color: var(--accent);
+}
+.rows--index > li > :is(.rows__name, p) { grid-column: 2; }
+@media (max-width: 639px) { .rows--index > li { grid-template-columns: 28px minmax(0, 1fr); column-gap: var(--s-3); } }
+
+/* the record: one sentence set at the h2 size across the page, the proof figures under it on hairlines */
+.statement__text { font: var(--display-weight) var(--t-h2)/1.18 var(--font-display); letter-spacing: var(--display-tracking);
+  max-width: 28ch; margin: 0; text-wrap: balance; }
+#clients > .wrap { display: flex; flex-direction: column; justify-content: center; }
+#record .stats .t-stat { font-size: var(--t-stat); color: var(--accent); font-variant-numeric: tabular-nums; }
+/* on a wide screen the figures are the band's second statement: large, red, on the section's foot */
+@media (min-width: 1024px) {
+  #record > .wrap { display: flex; flex-direction: column; }
+  #record .stats { margin-top: auto; }
+  #record .stats .t-stat { font-size: clamp(64px, 5.2vw, 104px); line-height: 1.1; letter-spacing: -0.03em; }
+}
+/* the client quotes set larger, so the band reads as its own statement */
+#clients blockquote { font-size: clamp(22px, 1.33vw + 16.8px, 36px); line-height: 1.25; letter-spacing: var(--display-tracking); }
+#clients .quote .person { margin-top: var(--s-6); }
+/* the split hero's facts stand only where the hero has the room beside its picture (a wide, tall screen) */
+@media (max-width: 1023px), (max-height: 819px) { .hero--split .hero__facts { display: none; } }
+/* the record: the proof figures follow the sentence after one big step */
+@media (max-width: 1023px) { #record .stats { margin-top: var(--s-6); } }
+
+/* the giant type on the dark band: a dark tint, so the photograph reads through the letters instead of
+   being washed out to grey by the light ink */
+#statement .mo-gt__type { --mo-tint: rgb(0 0 0 / .12); font-weight: 700; letter-spacing: -0.045em; }
+@media (max-width: 639px) { #statement .mo-gt__type { font-size: 22vw; } }
+@media (min-width: 640px) and (max-width: 1023px) { #statement .mo-gt__type { font-size: 15vw; } }
+#record .stats dt { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .06em; font-size: var(--t-label); }
+
+/* picture-develops: the one photograph a section develops fills its column like a .frame--fill photo
+   (--dev-pos sets its crop) */
+.develop { position: relative; overflow: hidden; border-radius: var(--r-lg); height: 100%; min-height: 420px; margin: 0; }
+.develop img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--dev-pos, 50% 50%); }
+@media (max-width: 1023px) { .develop { height: auto; aspect-ratio: 4 / 3; min-height: 0; } }
+
+/* the split hero's facts: one column of hairline rows under the buttons, out on a phone, where the
+   lead carries the hard fact */
+.hero--split .hero__facts { margin-top: var(--s-8); }
+@media (max-width: 639px) { .hero--split .hero__facts { display: none; } }
+
+.nav__logo img { width: 32px; height: 32px; }
+
+/* contact lines: long addresses wrap instead of pushing the page sideways */
+.contact-list { display: grid; gap: var(--s-3); margin: 0; padding: 0; list-style: none; }
+.contact-list a { color: inherit; overflow-wrap: anywhere; }
+
+/* the request form on its own panel */
+.form-panel { background: var(--surface); padding: var(--s-8); border-radius: var(--r-lg); }
+.form-panel .form > .field:last-of-type { grid-column: 1 / -1; }
+.form-panel .field { align-content: start; align-self: start; }
+.form-panel textarea { min-height: 120px; }
+.form-panel select { width: 100%; }
+@media (min-width: 1024px) { #request .grid { grid-template-rows: auto 1fr; } #request .form-panel { grid-row: 1 / span 2; } }
+@media (max-width: 639px) { .form-panel { padding: var(--s-5); } }
+
+/* a row's small second line (origin, drive, job type) */
+.rows .rows__meta { display: block; color: var(--muted); font-size: var(--t-small); }
+
+/* short windows (a laptop with the browser's bars): a section grows past its screen rather than lay
+   its last rows over the next one, as system.css already does from 640 to 1279 wide */
+@media (min-width: 640px) and (max-height: 860px) {
+  main > :is(section, .section):not(.hero), footer.closing {
+    height: auto; min-height: calc(var(--h, 1) * 100svh); display: flex; flex-direction: column;
+  }
+  main > :is(section, .section):not(.hero) > .wrap, footer.closing > .wrap { flex: 1 0 auto; height: auto; min-height: 0; }
+  main > :is(section, .section) > .wrap > .fill, .group > .fill { flex: 1 0 auto; }
+}
+
+/* long text pages (privacy, terms): one column of reading text that is as tall as it needs */
+main > section.doc { height: auto; min-height: 100svh; }
+.doc .wrap { display: block; }
+.doc__body { max-width: 68ch; }
+.doc__body h2 { font-size: var(--t-h3); margin: var(--s-7) 0 var(--s-3); }
+.doc__body p, .doc__body li { line-height: 1.7; }
+.doc__body ul { padding-left: 1.2em; }
+.doc__body a { color: inherit; }
+
+/* a block with no photograph to shrink keeps its own height, so a list or a form never runs out of
+   its section on a tablet or a small phone */
+main > :is(section, .section) > .wrap > .fill:not(:has(.frame--fill)) { flex: 1 0 auto; }
+.doc__body { overflow-wrap: anywhere; }
+
+/* a pinned-chapters section that stands still on a phone (its steps stacked) keeps its two whole screens,
+   so the next section never shows at the foot of its second one */
+@media (max-width: 639px) { main > section[data-moment="pinned-chapters"][data-moment]:not(.is-live) { min-height: calc(var(--hm, 2) * 100svh); } }
