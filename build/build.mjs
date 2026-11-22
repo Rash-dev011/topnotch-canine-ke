@@ -231,16 +231,16 @@ const home = page({
   title: 'Top Notch Canine Capability: K9 security dogs and handlers in Kenya',
   description: 'Detection dog training, trained patrol dogs and handler courses for airports, sea ports, hotels and security firms, from Kitengela since 2016.',
   ld: true,
-  preload: 'images/stock/malinois-handler-2400.jpg',
+  preload: 'images/stock/shepherd-grass-2400.jpg',
   body: `
 ${hero({
   page: false,
   full: true,
   h1: 'Trained security dogs and handlers for East Africa',
   text: 'Narcotics and explosives detection, patrol dogs and handler courses for airports, sea ports, hotels and security firms. In Kenya, Uganda and Tanzania since 2016.',
-  img: 'images/stock/malinois-handler-1200.jpg',
-  srcset: 'images/stock/malinois-handler-1200.jpg 1200w, images/stock/malinois-handler-2400.jpg 2400w',
-  alt: 'A Belgian Malinois on a handler\'s lead',
+  img: 'images/stock/shepherd-grass-1200.jpg',
+  srcset: 'images/stock/shepherd-grass-1200.jpg 1200w, images/stock/shepherd-grass-2400.jpg 2400w',
+  alt: 'A German Shepherd running towards the camera across dry grassland',
   pos: '62% 40%',
   actions: btn('contact.html#request', 'Request a K9 team') + '<a class="link" href="services.html">See the services</a>',
   creds: `<div class="creds"><div class="wrap"><ul class="creds__list">

@@ -587,3 +587,4 @@ select.input { appearance: none; background-image: url("data:image/svg+xml,%3Csv
 .social a[href*="linkedin"] svg { width: 36px; height: 36px; }
 .social a[href*="linkedin"]:hover { color: #004182; background: none; }
 .social a[href^="mailto:"] svg { width: 20px; height: 20px; }
+@media (min-width: 1200px) { .hero--full .hero__media img { width: 128%; max-width: none; } } /* keeps the centred dog clear of the text panel */
